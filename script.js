@@ -75,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const viewHandbook = document.getElementById("view-handbook");
   const btnSwitchToHandbook = document.getElementById("btn-switch-to-handbook");
   const footerViewLinks = document.querySelectorAll(".footer-view-link");
+  const handbookTargetLinks = document.querySelectorAll("[data-handbook-target]");
+  const btnCopyFlightGuide = document.getElementById("btn-copy-flight-guide");
 
   function switchMainView(viewName, scrollTarget = null) {
     if (viewName === "handbook") {
@@ -85,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.classList.toggle("active", isActive);
         btn.setAttribute("aria-selected", isActive ? "true" : "false");
       });
-      window.location.hash = "so-tay";
+      window.location.hash = scrollTarget === "#so-tay-bay" ? "so-tay-bay" : "so-tay";
     } else {
       viewHandbook?.classList.remove("active");
       viewItinerary?.classList.add("active");
@@ -117,6 +119,13 @@ document.addEventListener("DOMContentLoaded", () => {
     btnSwitchToHandbook.addEventListener("click", () => switchMainView("handbook"));
   }
 
+  handbookTargetLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      switchMainView("handbook", link.dataset.handbookTarget);
+    });
+  });
+
   footerViewLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -124,8 +133,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  if (window.location.hash === "#so-tay" || window.location.hash.startsWith("#handbook")) {
+  if (window.location.hash === "#so-tay-bay") {
+    switchMainView("handbook", "#so-tay-bay");
+  } else if (window.location.hash === "#so-tay" || window.location.hash.startsWith("#handbook")) {
     switchMainView("handbook");
+  }
+
+  if (btnCopyFlightGuide) {
+    btnCopyFlightGuide.addEventListener("click", async () => {
+      const guideUrl = new URL("#so-tay-bay", window.location.href).href;
+      try {
+        if (!navigator.clipboard) throw new Error("Clipboard API unavailable");
+        await navigator.clipboard.writeText(guideUrl);
+      } catch {
+        const input = document.createElement("textarea");
+        input.value = guideUrl;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.opacity = "0";
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+      }
+      btnCopyFlightGuide.textContent = "Đã sao chép link";
+      setTimeout(() => { btnCopyFlightGuide.textContent = "Sao chép link cẩm nang"; }, 1800);
+    });
   }
 
   /* ==========================================================================
