@@ -1,7 +1,70 @@
 /**
  * ĐÀ LẠT TRIP 2026 — 2-VIEW INTERACTIVE ENGINE
- * 5 Distinct Days (17, 18, 19, 20, 21.09), Location-First & Verified Da Lat Imagery.
+ * Compliance: AGENTS.md Collaboration Boundaries
+ * Short & punchy day titles (no over-detailing in headers).
  */
+
+/* ==========================================================================
+   HELPER FUNCTIONS AS SPECIFIED IN AGENTS.MD
+   ========================================================================== */
+
+function periodForTime(timeStr) {
+  const match = (timeStr || "").match(/^(\d{1,2}):(\d{2})/);
+  if (!match) return "morning";
+  const hour = parseInt(match[1], 10);
+  if (hour < 12) return "morning";
+  if (hour < 18) return "afternoon";
+  return "evening";
+}
+
+function tagTone(tag) {
+  const t = (tag || "").toLowerCase();
+  if (t.includes("wfh") || t.includes("focus") || t.includes("deep work")) return "tone-wfh";
+  if (t.includes("ăn") || t.includes("lẩu") || t.includes("cafe")) return "tone-food";
+  if (t.includes("xe") || t.includes("vf 3") || t.includes("bay") || t.includes("di chuyển")) return "tone-travel";
+  return "tone-default";
+}
+
+function renderTimeline(items) {
+  const periods = [
+    { key: "morning", label: "Buổi Sáng", className: "period-morning" },
+    { key: "afternoon", label: "Buổi Chiều", className: "period-afternoon" },
+    { key: "evening", label: "Buổi Tối", className: "period-evening" }
+  ];
+
+  let html = "";
+
+  periods.forEach(p => {
+    const periodItems = items.filter(it => periodForTime(it.time) === p.key);
+    if (periodItems.length > 0) {
+      html += `
+        <div class="timeline-period-group ${p.className}">
+          <div class="period-header-label">${p.label}</div>
+          <ol class="timeline-list">
+            ${periodItems.map(item => `
+              <li class="timeline-item">
+                <div class="timeline-time-badge">${item.time}</div>
+                <div class="timeline-text">
+                  <div class="timeline-item-header">
+                    <strong class="item-activity-name">${item.title}</strong>
+                    ${item.tag ? `<span class="timeline-pill-tag ${tagTone(item.tag)}">${item.tag}</span>` : ''}
+                  </div>
+                  <div class="timeline-location-row">
+                    <span class="pin-icon">📍</span>
+                    <span class="loc-text">${item.location}</span>
+                  </div>
+                  <div class="timeline-short-note">${item.note}</div>
+                </div>
+              </li>
+            `).join("")}
+          </ol>
+        </div>
+      `;
+    }
+  });
+
+  return html;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   /* ==========================================================================
@@ -66,56 +129,71 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ==========================================================================
-     2. STREAMLINED TIMELINE & LOCATION DATA (5 DISTINCT DAYS)
+     2. STREAMLINED TIMELINE & LOCATION DATA (5 DISTINCT DAYS: 17, 18, 19, 20, 21)
+     Short, concise, slogan-focused titles without clutter.
      ========================================================================== */
   const scheduleData = [
     {
       meta: "THỨ NĂM · 17.09.2026",
-      slogan: "Chạm ngõ phố sương",
-      title: "Chạm ngõ phố sương: Làm việc nhẹ tênh, tối quây quần lẩu cá tầm",
+      slogan: "Chạm Ngõ Sương Sớm",
+      title: "Chạm Ngõ Sương Sớm",
       tone: "mist",
-      tip: "💡 Nhận phòng thảnh thơi, chiều làm việc vừa sức để dành trọn buổi tối cho nồi lẩu cá tầm nóng hổi.",
+      tip: "💡 Đến lúc 06:00 sáng, nhận xe VF 3 sớm lúc 06:30 để chủ động bỏ đồ lên xe, đi ăn sáng ngắm sương hồ và chốt khách sạn.",
       items: [
         {
-          time: "09:30 – 11:30",
-          title: "Đến nơi & Gửi hành lý",
-          location: "Free Style Hotel (57 Hoàng Diệu) hoặc BIDV Central (11 Bis Lê Hồng Phong)",
-          note: "Gửi đồ tại lễ tân, rửa mặt nghỉ ngơi nhẹ.",
-          tag: "Check-in"
+          time: "06:00 – 06:30",
+          title: "Đến Đà Lạt đón bình minh sương sớm",
+          location: "Trung tâm TP. Đà Lạt (14–15°C trong lành)",
+          note: "Đến sớm tinh khôi, hít thở không khí mát lạnh đầu ngày, rửa mặt tỉnh táo.",
+          tag: "Đến nơi"
         },
         {
-          time: "11:30 – 13:00",
-          title: "Ăn trưa Bánh ướt lòng gà / Bánh căn",
-          location: "Bánh ướt lòng gà Long (Hẻm 202 Phan Đình Phùng) hoặc Bánh căn Lệ (27/44 Yersin)",
-          note: "Gà ta xé giòn, nước mắm ấm chua ngọt, trà atiso nóng.",
-          tag: "Ăn trưa"
-        },
-        {
-          time: "13:00 – 14:00",
-          title: "Nhận phòng & Setup WFH",
-          location: "Khách sạn tự túc đã chọn",
-          note: "Tắm nước nóng, test Wi-Fi bàn làm việc.",
-          tag: "Nghỉ ngơi"
-        },
-        {
-          time: "14:00 – 17:30",
-          title: "WFH Block 1: Xử lý việc nhẹ",
-          location: "Khách sạn (hoặc Daily Log Coffee - 15 Thông Thiên Học)",
-          note: "Duyệt approval, check Slack, email tồn đọng.",
-          tag: "WFH"
-        },
-        {
-          time: "17:45 – 18:30",
-          title: "Nhận xe VinFast VF 3",
-          location: "Amazing Xanh (14 Đống Đa, P.3 - 📞 1900 8649) / giao sảnh KS",
-          note: "Kiểm tra pin >80%, cáp sạc 220V, chụp ảnh 4 góc xe.",
+          time: "06:30 – 07:00",
+          title: "Nhận xe VinFast VF 3 sớm",
+          location: "Giao tận nơi / Amazing Xanh (14 Đống Đa, P.3 - 📞 1900 8649)",
+          note: "Nhận xe sớm, kiểm tra pin >80%, cất hành lý lên cốp xe.",
           tag: "Xe VF 3"
         },
         {
-          time: "18:45 – 20:30",
+          time: "07:00 – 08:30",
+          title: "Ăn sáng nóng hổi & Cà phê Tùng ngắm hồ",
+          location: "Bánh mì xíu mại Ri 79 (01 Thông Thiên Học) & Cà phê Tùng (Số 6 Khu Hòa Bình)",
+          note: "Chén xíu mại cay béo nóng hổi, ly cafe phin vợt ngắm sương mai.",
+          tag: "Ăn sáng"
+        },
+        {
+          time: "08:30 – 11:30",
+          title: "Chốt đặt khách sạn & Cafe WFH sáng",
+          location: "Khách sạn tự túc (Free Style / BIDV Central) & Daily Log (15 Thông Thiên Học)",
+          note: "Chốt khách sạn 2 đêm, gửi hành lý hoặc nhận phòng sớm; WFH êm tại Daily Log (Wi-Fi 5GHz).",
+          tag: "Chốt KS & WFH"
+        },
+        {
+          time: "11:30 – 13:00",
+          title: "Ăn trưa Bánh ướt lòng gà Long",
+          location: "Hẻm 202 Phan Đình Phùng (hoặc Bánh căn Lệ - 27/44 Yersin)",
+          note: "Gà ta xé giòn, lòng mề đậm đà, nước mắm chua ngọt ấm bụng.",
+          tag: "Ăn trưa"
+        },
+        {
+          time: "13:30 – 14:00",
+          title: "Check-in chính thức phòng khách sạn",
+          location: "Khách sạn tự túc đã chọn",
+          note: "Nhận phòng, tắm nước nóng thư giãn, setup bàn làm việc buổi chiều.",
+          tag: "Check-in"
+        },
+        {
+          time: "14:00 – 17:30",
+          title: "WFH Block 1: Xử lý công việc",
+          location: "Phòng khách sạn / Daily Log Coffee",
+          note: "Duyệt approval, check Slack, email tồn đọng vừa sức.",
+          tag: "WFH"
+        },
+        {
+          time: "18:30 – 20:30",
           title: "Ăn tối Lẩu cá tầm Ngư Sơn",
           location: "34 Trần Nhật Duật, P. Cam Ly",
-          note: "Cá tầm tươi giòn sần sật, lẩu măng chua cay ấm bụng.",
+          note: "Cá tầm tươi giòn sần sật béo ngậy, nhúng lẩu măng chua cay ấm nóng.",
           tag: "Ăn tối"
         },
         {
@@ -151,8 +229,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       meta: "THỨ SÁU · 18.09.2026",
-      slogan: "Sớm mai Cầu Đất",
-      title: "Sớm mai Cầu Đất: Đón nắng đồi chè, dứt điểm việc tuần & lẩu bò Ba Toa",
+      slogan: "Sớm Mai Cầu Đất",
+      title: "Sớm Mai Cầu Đất",
       tone: "pine",
       tip: "🌿 05:30 xuất phát đón trọn không khí 14°C trong veo, chiều Deep Work xong là thoải mái xả hơi cuối tuần.",
       items: [
@@ -252,8 +330,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       meta: "THỨ BẢY · 19.09.2026",
-      slogan: "Hòa nhịp đồng đội",
-      title: "Hòa nhịp đồng đội: Thong thả nhập đoàn, teambuilding & tiệc Gala",
+      slogan: "Hòa Nhịp Đồng Đội",
+      title: "Hòa Nhịp Đồng Đội",
       tone: "clay",
       tip: "🤝 Trả xe VF 3 thong thả trước trưa để nhập đoàn ăn bữa cơm sum vầy và quẩy hết mình tiệc tối.",
       items: [
@@ -325,8 +403,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       meta: "CHỦ NHẬT · 20.09.2026",
-      slogan: "Khám phá cùng đoàn",
-      title: "Khám phá cùng đoàn: Trọn vẹn tour công ty, mua quà & chuẩn bị bay",
+      slogan: "Khám Phá Cùng Đoàn",
+      title: "Khám Phá Cùng Đoàn",
       tone: "blue",
       tip: "⚠️ 21:00 tối Chủ Nhật soát hành lý kỹ, để sẵn CCCD/laptop và đặt 2 báo thức lúc 04:30 & 04:45.",
       items: [
@@ -398,13 +476,13 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       meta: "THỨ HAI · 21.09.2026",
-      slogan: "Cất cánh rạng đông",
-      title: "Cất cánh rạng đông: Ra sân bay sớm 05:10, chuyến bay 07:20 về TP.HCM",
+      slogan: "Cất Cánh Rạng Đông",
+      title: "Cất Cánh Rạng Đông",
       tone: "blue",
       tip: "✈️ Sân bay Liên Khương cách trung tâm 30km đèo (45 phút xe). Tuyệt đối không rời khách sạn sau 05:15.",
       items: [
         {
-          time: "04:45",
+          time: "04:45 – 05:10",
           title: "Báo thức dậy & Checkout khách sạn",
           location: "Sảnh khách sạn đoàn công ty",
           note: "Rửa mặt tỉnh táo, kiểm tra kỹ phòng và làm thủ tục checkout lễ tân.",
@@ -432,18 +510,11 @@ document.addEventListener("DOMContentLoaded", () => {
           tag: "Boarding"
         },
         {
-          time: "07:20",
+          time: "07:20 – 08:15",
           title: "Cất cánh chuyến bay Liên Khương ➔ TP.HCM",
           location: "Chuyến bay DLI ➔ SGN",
-          note: "Thời gian bay 55 phút. Ngắm mây bồng bềnh trên cao nguyên.",
+          note: "Thời gian bay 55 phút. Hạ cánh Tân Sơn Nhất 08:15.",
           tag: "Cất cánh"
-        },
-        {
-          time: "08:15",
-          title: "Hạ cánh Tân Sơn Nhất (SGN)",
-          location: "Ga Quốc nội — Sân bay Quốc tế Tân Sơn Nhất, TP.HCM",
-          note: "Lấy hành lý ký gửi. Khởi đầu tuần làm việc mới tràn đầy năng lượng!",
-          tag: "Hạ cánh SGN"
         }
       ],
       gallery: {
@@ -477,70 +548,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabButtonsH = document.querySelectorAll(".day-tabs-horizontal .tab-item-h");
   const btnCopyDay = document.getElementById("btn-copy-current-day");
 
-  function tagTone(tag = "") {
-    const value = tag.toLowerCase();
-    if (/wfh|deep work|dọn việc|dọn đồ/.test(value)) return "work";
-    if (/ăn|bữa tối|cafe|gala dinner/.test(value)) return "food";
-    if (/xe|di chuyển|về phố|trả xe|ra sân bay/.test(value)) return "travel";
-    if (/cầu đất|chill|team trip|tour đoàn|mua sắm/.test(value)) return "experience";
-    if (/boarding|cất cánh|hạ cánh|dậy sớm|soát đồ bay|nhập đoàn|check-in|nghỉ ngơi/.test(value)) return "logistics";
-    return "default";
-  }
-
-  function periodForTime(time = "") {
-    const firstHour = Number(time.match(/\d{1,2}/)?.[0]);
-    if (Number.isNaN(firstHour) || firstHour < 12) return "morning";
-    if (firstHour < 18) return "afternoon";
-    return "evening";
-  }
-
-  function renderTimeline(items) {
-    const labels = { morning: "Buổi sáng", afternoon: "Buổi chiều", evening: "Buổi tối" };
-    const periods = ["morning", "afternoon", "evening"];
-    const groups = items.reduce((result, item) => {
-      const period = periodForTime(item.time);
-      (result[period] ??= []).push(item);
-      return result;
-    }, {});
-
-    return periods.filter((period) => groups[period]?.length).map((period) => `
-      <li class="timeline-period-group period-${period}">
-        <div class="timeline-period"><span>${labels[period]}</span></div>
-        <ol class="timeline-period-items">
-          ${groups[period].map((item) => `
-        <li class="timeline-item period-item-${period}">
-          <div class="timeline-time-badge">${item.time}</div>
-          <div class="timeline-text">
-            <div class="timeline-item-header">
-              <strong class="item-activity-name">${item.title}</strong>
-              ${item.tag ? `<span class="timeline-pill-tag tone-${tagTone(item.tag)}">${item.tag}</span>` : ""}
-            </div>
-            <div class="timeline-location-row">
-              <span class="pin-icon">📍</span>
-              <span class="loc-text">${item.location}</span>
-            </div>
-            <div class="timeline-short-note">${item.note}</div>
-          </div>
-        </li>`).join("")}
-        </ol>
-      </li>`).join("");
-  }
-
   function renderDay(index) {
     currentDayIndex = index;
     const data = scheduleData[index];
     if (!data || !dayCard || !photoStoryCard) return;
 
-    // Render Compact Timeline on Left
+    // Render Timeline on Left with renderTimeline
     dayCard.dataset.tone = data.tone;
     dayCard.innerHTML = `
       <div>
         <div class="card-top-meta">
-          <span class="day-slogan-pill">✨ ${data.slogan}</span>
           <span>${data.meta}</span>
+          <span class="day-slogan-pill">✨ ${data.slogan}</span>
         </div>
         <h3 class="day-card-title">${data.title}</h3>
-        <ol class="timeline-list">${renderTimeline(data.items)}</ol>
+        ${renderTimeline(data.items)}
       </div>
       <div class="card-footer-tip">${data.tip}</div>
     `;
@@ -609,7 +631,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       text += `${data.tip}`;
       navigator.clipboard.writeText(text).then(() => {
-        showToast("Đã sao chép lịch trình: " + data.slogan + "!");
+        showToast("Đã sao chép lịch trình: " + data.title + "!");
       });
     });
   }
@@ -627,13 +649,22 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Đà Lạt Trip 2026
 BEGIN:VEVENT
+UID:dalat-vf3-early-pickup-20260917
+DTSTAMP:20260916T233000Z
+DTSTART:20260916T233000Z
+DTEND:20260917T003000Z
+SUMMARY:⚡ Nhận xe VinFast VF 3 sớm (06:30 sáng)
+DESCRIPTION:Đến Đà Lạt 06:00, nhận xe VF 3 lúc 06:30 để bỏ đồ lên xe và đi ăn sáng. Amazing Xanh hotline: 1900 8649.
+LOCATION:Trung tâm TP. Đà Lạt (giao tận nơi)
+END:VEVENT
+BEGIN:VEVENT
 UID:dalat-wfh-1-20260917
 DTSTAMP:20260917T070000Z
 DTSTART:20260917T070000Z
 DTEND:20260917T103000Z
 SUMMARY:💼 WFH Block 1 - Đà Lạt
-DESCRIPTION:Xử lý tin nhắn, approval sau khi nhận phòng.
-LOCATION:57 Hoàng Diệu, P.5, Đà Lạt
+DESCRIPTION:Xử lý tin nhắn, approval sau khi check-in khách sạn.
+LOCATION:Đà Lạt
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-dinner-sturgeon-20260917
@@ -782,12 +813,12 @@ END:VCALENDAR`;
      6. SMART CHECKLIST WITH LOCALSTORAGE (IN HANDBOOK VIEW)
      ========================================================================== */
   const defaultChecklist = [
-    { id: 1, text: "Đặt bàn trước tại Lẩu cá tầm Ngư Sơn (34 Trần Nhật Duật) cho tối 17/09", category: "trip", done: false },
-    { id: 2, text: "Đặt khách sạn 2 đêm 17–18/09 (Free Style Hotel 57 Hoàng Diệu hoặc BIDV Central)", category: "vf3", done: false },
-    { id: 3, text: "Liên hệ Amazing Xanh / Thuê VF3 Đà Lạt chốt xe điện từ chiều 17 đến trưa 19/09", category: "vf3", done: false },
+    { id: 1, text: "Chốt đặt xe VF 3 giao sớm lúc 06:30 sáng Thứ Năm 17/09 (Amazing Xanh 1900 8649)", category: "vf3", done: false },
+    { id: 2, text: "Chọn và đặt phòng khách sạn 2 đêm 17–18/09 (Free Style 57 Hoàng Diệu hoặc BIDV Central)", category: "vf3", done: false },
+    { id: 3, text: "Đặt bàn trước tại Lẩu cá tầm Ngư Sơn (34 Trần Nhật Duật) cho tối 17/09", category: "trip", done: false },
     { id: 4, text: "Đóng gói thiết bị WFH: Laptop, củ sạc nhanh 65W/100W, chuột, tai nghe họp chống ồn", category: "wfh", done: false },
     { id: 5, text: "Chuẩn bị cục phát Wi-Fi 4G/5G dự phòng và ổ cắm chia đa năng", category: "wfh", done: false },
-    { id: 6, text: "Áo khoác ấm, khăn mỏng, ô gấp và thuốc cảm/dạ dày/dầu gió", category: "trip", done: false },
+    { id: 6, text: "Áo khoác ấm nhiều lớp, khăn mỏng, ô gấp và thuốc cảm/dạ dày/dầu gió", category: "trip", done: false },
     { id: 7, text: "Nhắn tin đầu mối đoàn: xác nhận giờ và địa điểm đón đoàn trưa Thứ Bảy 19/09", category: "trip", done: false },
     { id: 8, text: "Kiểm tra giấy tờ tùy thân (CCCD / Bằng lái xe ô tô B2 để nhận lái VF 3)", category: "vf3", done: false },
     { id: 9, text: "Đặt báo thức 04:45 sáng Thứ Hai 21/09 để ra sân bay Liên Khương chuyến 07:20", category: "trip", done: false }
