@@ -1,15 +1,6 @@
 /**
  * ĐÀ LẠT TRIP 2026 — 2-VIEW INTERACTIVE ENGINE
- * Features:
- * 1. Primary 2-View Segmented Switcher (Itinerary & Visuals vs Handbook & Tools)
- * 2. Visual Photo Story & Interactive Schedule Renderer
- * 3. ICS Calendar Export (.ics generator)
- * 4. Weather Scenario Toggle (Sunny vs Rainy)
- * 5. Interactive Budget Calculator
- * 6. Smart Checklist with localStorage & Category Filters
- * 7. Atmosphere Mood Theme Switcher (Mist / Pine / Night)
- * 8. Ambient Soundscape Synthesizer (Web Audio API)
- * 9. Real-time Clock, Scroll Progress & Toast System
+ * Compact, high-readability, location-first itinerary & verified Da Lat imagery.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const viewItinerary = document.getElementById("view-itinerary");
   const viewHandbook = document.getElementById("view-handbook");
   const btnSwitchToHandbook = document.getElementById("btn-switch-to-handbook");
-  const btnCalloutHandbook = document.getElementById("btn-callout-handbook");
   const footerViewLinks = document.querySelectorAll(".footer-view-link");
 
   function switchMainView(viewName, scrollTarget = null) {
@@ -64,10 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btnSwitchToHandbook.addEventListener("click", () => switchMainView("handbook"));
   }
 
-  if (btnCalloutHandbook) {
-    btnCalloutHandbook.addEventListener("click", () => switchMainView("handbook"));
-  }
-
   footerViewLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -75,104 +61,334 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Handle URL hash on initial load
   if (window.location.hash === "#so-tay" || window.location.hash.startsWith("#handbook")) {
     switchMainView("handbook");
   }
 
   /* ==========================================================================
-     2. VISUAL ITINERARY & PHOTO STORY DATA
+     2. STREAMLINED TIMELINE & LOCATION DATA
      ========================================================================== */
   const scheduleData = [
     {
       meta: "THỨ NĂM · 17.09.2026",
-      title: "Lên Đà Lạt & Khởi động nhẹ nhàng",
+      title: "Lên Đà Lạt, WFH & Lẩu Cá Tầm",
       tone: "mist",
-      tip: "💡 Ngày đầu di chuyển không nên tự ép làm việc quá nặng. Giữ đầu óc thoải mái để nhận phòng và xe.",
+      tip: "💡 Nhận xe VF 3 kiểm tra pin >80% & đặt bàn trước Lẩu cá tầm Ngư Sơn.",
       items: [
-        { time: "Sáng", title: "Di chuyển lên Đà Lạt", desc: "Tới trung tâm trước giờ trưa, gửi hành lý hoặc check-in nhận phòng sớm. Không xếp lịch xa." },
-        { time: "11:30–13:30", title: "Ăn trưa & Nghỉ ngơi", desc: "Ăn trưa nhẹ gần khách sạn, tắm nước ấm và nghỉ ngơi một chút sau chuyến đi." },
-        { time: "14:00–17:30", title: "💼 WFH Block 1: Nhận việc & Approval", desc: "Xử lý tin nhắn, email, phê duyệt đầu việc. Tránh ôm deep work quá sức." },
-        { time: "17:45–18:30", title: "⚡ Nhận xe VinFast VF 3", desc: "Kiểm tra mức pin (>80%), cáp sạc 220V, chụp 4 góc xe và lưu số hotline cứu hộ." },
-        { time: "19:00–21:30", title: "Dạo Hồ Xuân Hương & Ăn tối", desc: "Chạy xe vòng quanh hồ, ngắm Quảng trường Lâm Viên, ăn tối món ngon và về nghỉ sớm." }
+        {
+          time: "09:30 – 11:30",
+          title: "Đến nơi & Gửi hành lý",
+          location: "Free Style Hotel (57 Hoàng Diệu) hoặc BIDV Central (11 Bis Lê Hồng Phong)",
+          note: "Gửi đồ tại lễ tân, rửa mặt nghỉ ngơi nhẹ.",
+          tag: "Check-in"
+        },
+        {
+          time: "11:30 – 13:00",
+          title: "Ăn trưa Bánh ướt lòng gà / Bánh căn",
+          location: "Bánh ướt lòng gà Long (Hẻm 202 Phan Đình Phùng) hoặc Bánh căn Lệ (27/44 Yersin)",
+          note: "Gà ta xé giòn, nước mắm ấm chua ngọt, trà atiso nóng.",
+          tag: "Ăn trưa"
+        },
+        {
+          time: "13:00 – 14:00",
+          title: "Nhận phòng & Setup WFH",
+          location: "Khách sạn tự túc đã chọn",
+          note: "Tắm nước nóng, test Wi-Fi bàn làm việc.",
+          tag: "Nghỉ ngơi"
+        },
+        {
+          time: "14:00 – 17:30",
+          title: "WFH Block 1: Xử lý việc nhẹ",
+          location: "Khách sạn (hoặc Daily Log Coffee - 15 Thông Thiên Học)",
+          note: "Duyệt approval, check Slack, email tồn đọng.",
+          tag: "WFH"
+        },
+        {
+          time: "17:45 – 18:30",
+          title: "Nhận xe VinFast VF 3",
+          location: "Amazing Xanh (14 Đống Đa, P.3 - 📞 1900 8649) / giao sảnh KS",
+          note: "Kiểm tra pin >80%, cáp sạc 220V, chụp ảnh 4 góc xe.",
+          tag: "Xe VF 3"
+        },
+        {
+          time: "18:45 – 20:30",
+          title: "Ăn tối Lẩu cá tầm Ngư Sơn",
+          location: "34 Trần Nhật Duật, P. Cam Ly",
+          note: "Cá tầm tươi giòn sần sật, lẩu măng chua cay ấm bụng.",
+          tag: "Ăn tối"
+        },
+        {
+          time: "20:45 – 22:15",
+          title: "Bánh tráng nướng & Sữa đậu nành",
+          location: "Cô Hoa (56 Thông Thiên Học) & Hoa Sữa (64 Tăng Bạt Hổ)",
+          note: "Bánh tráng nướng phô mai giòn rụm, sữa đậu nành bò nóng ngắm hồ.",
+          tag: "Ăn vặt"
+        }
       ],
       gallery: {
-        badge: "HỒ XUÂN HƯƠNG · 18:30",
-        title: "Hoàng hôn buông trên mặt hồ phẳng lặng",
-        desc: "Nhận chiếc VF 3 nhỏ gọn, chạy một vòng đón gió lạnh 17°C quanh hồ Xuân Hương và tận hưởng nhịp sống chậm rãi đặc trưng của Đà Lạt.",
+        badge: "HỒ XUÂN HƯƠNG · ĐÀ LẠT",
+        title: "Hoàng hôn Hồ Xuân Hương & Đêm Phố Núi",
+        desc: "Mặt nước Hồ Xuân Hương trong sương chiều và ánh đèn lung linh quanh trung tâm Đà Lạt.",
         images: [
-          { url: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80", label: "Hoàng hôn hồ" },
-          { url: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80", label: "Phố chiều sương" },
-          { url: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1000&q=80", label: "Rừng thông" }
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/H%E1%BB%93_Xu%C3%A2n_H%C6%B0%C6%A1ng,_%C4%90%C3%A0_L%E1%BA%A1t_(2).JPG",
+            label: "Hồ Xuân Hương",
+            credit: "Ảnh thực tế: Hồ Xuân Hương, Đà Lạt (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+          },
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/Da_Lat_night.jpg",
+            label: "Đà Lạt về đêm",
+            credit: "Ảnh thực tế: Toàn cảnh Đà Lạt về đêm (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+          },
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dalat_market,_Vietnam.jpg",
+            label: "Chợ Đà Lạt",
+            credit: "Ảnh thực tế: Chợ Đà Lạt trung tâm (Nguồn: Wikimedia Commons, CC BY-SA 2.0)"
+          }
         ]
       }
     },
     {
       meta: "THỨ SÁU · 18.09.2026",
-      title: "Sáng sớm Cầu Đất & Deep Work buổi chiều",
+      title: "Cầu Đất Sớm, Deep Work & Lẩu Bò",
       tone: "pine",
-      tip: "🌿 Điểm nhấn của chặng tự túc: Đón bình minh đồi chè không đông đúc và làm việc tập trung cao độ buổi chiều.",
+      tip: "🌿 05:30 xuất phát đi Cầu Đất đường vắng, chiều xong việc ăn Lẩu bò Ba Toa & Kem bơ Nari.",
       items: [
-        { time: "05:30", title: "Xuất phát cung Trại Mát – Cầu Đất", desc: "Mặc ấm nhiều lớp, kiểm tra pin xe, mang theo bình giữ nhiệt nước ấm." },
-        { time: "06:20–07:15", title: "Đồi chè Cầu Đất lúc vừa hửng sáng", desc: "Không khí 14°C, vắng người, sương mỏng bay trên luống chè. Dạo bước thong thả." },
-        { time: "07:30–09:00", title: "☕ Cà phê ven hồ nước & Ăn sáng", desc: "Ngồi quán ven hồ tĩnh lặng, mở playlist acoustic nhẹ nhàng, trò chuyện thong thả." },
-        { time: "09:30–10:30", title: "Về khách sạn tắm nước nóng", desc: "Quay về trung tâm, chuẩn bị bàn làm việc cho block tập trung chính." },
-        { time: "10:45–16:30", title: "💼 WFH Block 2: Deep Work & Họp", desc: "Block làm việc quan trọng nhất chuyến đi. Ưu tiên các cuộc họp quan trọng sau 11:00." },
-        { time: "17:00–21:30", title: "Phố chiều & Bữa tối ấm cúng", desc: "Ghé Dinh III hoặc Nhà thờ Con Gà ngắm hoàng hôn, ăn lẩu gà lá é hoặc nướng ngói." }
+        {
+          time: "05:30 – 06:15",
+          title: "Lái VF 3 đi Cầu Đất",
+          location: "Trục Hùng Vương ➔ Trại Mát ➔ QL20 Cầu Đất (~24km)",
+          note: "Mặc ấm nhiều lớp, pin xe >60%, ngắm thung lũng đèn sương sớm.",
+          tag: "Di chuyển"
+        },
+        {
+          time: "06:20 – 07:20",
+          title: "Dạo Đồi chè Cầu Đất",
+          location: "Đồi Chè Cầu Đất Farm (Xuân Trường, Đà Lạt)",
+          note: "14°C trong lành, vắng người, dạo đồi chè đón nắng sớm.",
+          tag: "Cầu Đất"
+        },
+        {
+          time: "07:30 – 09:00",
+          title: "Ăn sáng & Cà phê bên hồ",
+          location: "Haiyih Coffee Cầu Đất (view hồ vô cực) / Gió Cầu Đất",
+          note: "Cà phê nóng, ăn sáng nhẹ, nghe nhạc thư giãn tới 09:00.",
+          tag: "Cafe sáng"
+        },
+        {
+          time: "09:15 – 10:15",
+          title: "Về lại Trung tâm",
+          location: "QL20 ➔ Trại Mát ➔ Trung tâm TP",
+          note: "Chạy xe thong thả qua các rặng thông mát mẻ.",
+          tag: "Về phố"
+        },
+        {
+          time: "10:45 – 13:00",
+          title: "WFH Block 2 (Phần 1): Deep Work",
+          location: "Phòng khách sạn / Daily Log Coffee (15 Thông Thiên Học - Wi-Fi 5GHz)",
+          note: "Phiên làm việc chính: họp trọng tâm, code, chốt tài liệu.",
+          tag: "Deep Work"
+        },
+        {
+          time: "13:00 – 14:00",
+          title: "Ăn trưa Bánh mì xíu mại Ri 79",
+          location: "01 Thông Thiên Học (hoặc Phở Thưng - 02 Nguyễn Văn Cừ)",
+          note: "Bánh mì xíu mại nóng giòn cay béo, nghỉ trưa 20 phút.",
+          tag: "Ăn trưa"
+        },
+        {
+          time: "14:00 – 16:30",
+          title: "WFH Block 2 (Phần 2): Chốt Backlog",
+          location: "Daily Log Coffee / Khách sạn",
+          note: "Dọn dẹp ticket tồn đọng, bàn giao công việc tuần.",
+          tag: "Dọn việc"
+        },
+        {
+          time: "17:00 – 18:30",
+          title: "Ngắm hoàng hôn đồi thông",
+          location: "In The Forest (Khe Sanh) / Cheo Veooo (116 Hùng Vương) / Dinh III",
+          note: "Trà ấm, ngắm mặt trời lặn sau rặng thông yên tĩnh.",
+          tag: "Chill chiều"
+        },
+        {
+          time: "19:00 – 21:00",
+          title: "Ăn tối Lẩu bò Ba Toa Quán Gỗ",
+          location: "Hẻm 1/29 Hoàng Diệu, P.5",
+          note: "Nồi lẩu bò nạm gân đuôi bò thơm ngậy ăn kèm mì trứng, rau xanh.",
+          tag: "Ăn tối"
+        },
+        {
+          time: "21:15 – 22:30",
+          title: "Kem bơ Nari & Chè Hé nóng",
+          location: "Kem bơ Nari (74C Nguyễn Văn Trỗi) & Chè Hé (11A Ba Tháng Hai)",
+          note: "Kem bơ sáp béo ngậy sầu riêng, chén chè trôi nước gừng ấm nóng.",
+          tag: "Ăn vặt"
+        }
       ],
       gallery: {
-        badge: "ĐỒI CHÈ CẦU ĐẤT · 06:20",
-        title: "Tia nắng sớm rọi qua biển đồi chè",
-        desc: "Không khí 14°C trong vắt. Những tia nắng đầu ngày xiên qua rặng thông và đồi chè xanh mướt trước khi cả nhóm ngồi bên nhau thưởng thức tách cà phê nóng ven hồ.",
+        badge: "ĐỒI CHÈ CẦU ĐẤT · XUÂN TRƯỜNG",
+        title: "Đồi chè Cầu Đất trong sương mai & Rừng thông",
+        desc: "Những luống chè xanh mướt trải dài tại Nông trường Cầu Đất (Xuân Trường, Đà Lạt).",
         images: [
-          { url: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1000&q=80", label: "Đồi chè sớm" },
-          { url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80", label: "Cà phê ấm" },
-          { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80", label: "Hồ nước sáng" }
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/%C4%90%E1%BB%93i_ch%C3%A8_C%E1%BA%A7u_%C4%90%E1%BA%A5t,_th%C3%A1ng_11_n%C4%83m_2011_-_1.jpg",
+            label: "Đồi chè Cầu Đất 1",
+            credit: "Ảnh thực tế: Đồi chè Cầu Đất, Xuân Trường, Đà Lạt (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+          },
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/%C4%90%E1%BB%93i_ch%C3%A8_C%E1%BA%A7u_%C4%90%E1%BA%A5t,_th%C3%A1ng_11_n%C4%83m_2011_-_2.jpg",
+            label: "Đồi chè Cầu Đất 2",
+            credit: "Ảnh thực tế: Toàn cảnh đồi chè Cầu Đất (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+          },
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/Th%C3%A1c_Prenn,_062015.jpg",
+            label: "Rừng thông Đà Lạt",
+            credit: "Ảnh thực tế: Cảnh sắc thiên nhiên đồi thông Lâm Đồng (Nguồn: Wikimedia Commons, CC BY-SA 4.0)"
+          }
         ]
       }
     },
     {
       meta: "THỨ BẢY · 19.09.2026",
-      title: "Checkout, trả VF 3 & Nhập đoàn Company Trip",
+      title: "Trả Xe VF 3 & Nhập Đoàn Company Trip",
       tone: "clay",
-      tip: "🤝 Chủ động liên hệ đầu mối công ty từ sáng để nắm chính xác giờ và khách sạn đón đoàn.",
+      tip: "🤝 Trả xe VF 3 trước 11:30 để kịp ăn trưa và check-in cùng đoàn công ty.",
       items: [
-        { time: "07:30–08:30", title: "Ăn sáng & Cà phê sáng", desc: "Thưởng thức ly cà phê cuối chặng tự túc, kiểm tra tin nhắn hẹn từ đoàn." },
-        { time: "08:30–10:00", title: "💼 WFH Block 3: Buffer phát sinh", desc: "Xử lý nốt việc gấp, bàn giao công việc cuối tuần và dọn dẹp hành lý gọn gàng." },
-        { time: "10:30–11:30", title: "Trả phòng & Trả xe VF 3", desc: "Kiểm tra kỹ đồ đạc trong phòng và trong cốp xe, bàn giao xe cho bên dịch vụ." },
-        { time: "Trưa / Chiều", title: "🏢 Gặp đoàn công ty tại điểm hẹn", desc: "Hội ngộ đồng nghiệp, nhận phòng khách sạn đoàn và bắt đầu lịch trình Company Trip!" }
+        {
+          time: "07:30 – 08:30",
+          title: "Ăn sáng Bánh căn / Bánh mì xíu mại",
+          location: "Bánh căn Nhà Chung (01 Nhà Chung) / Hoàng Diệu (26 Hoàng Diệu)",
+          note: "Bánh căn trứng giòn nóng, sữa đậu nành.",
+          tag: "Ăn sáng"
+        },
+        {
+          time: "08:30 – 10:00",
+          title: "WFH Block 3: Chốt việc & Đóng vali",
+          location: "Khách sạn tự túc (hoặc Là Việt Coffee - 200 Nguyễn Công Trứ)",
+          note: "Xử lý việc khẩn cấp, đóng gói hành lý.",
+          tag: "Dọn đồ"
+        },
+        {
+          time: "10:30 – 11:30",
+          title: "Checkout KS & Trả xe VF 3",
+          location: "Sảnh khách sạn tự túc",
+          note: "Kiểm tra đồ đạc, bàn giao xe cho bên dịch vụ.",
+          tag: "Trả xe"
+        },
+        {
+          time: "11:45 – 13:30",
+          title: "Hội ngộ đoàn Công ty & Ăn trưa",
+          location: "Khách sạn chính của đoàn công ty (trung tâm TP)",
+          note: "Gặp gỡ đồng nghiệp, ăn trưa chào mừng và nhận phòng đoàn.",
+          tag: "Nhập đoàn"
+        },
+        {
+          time: "14:00 – 17:30",
+          title: "Hoạt động Teambuilding đoàn",
+          location: "Theo lịch trình của BTC Company Trip",
+          note: "Tham gia các trò chơi gắn kết tập thể.",
+          tag: "Team Trip"
+        },
+        {
+          time: "18:30 – 21:30",
+          title: "Gala Dinner & Tiệc BBQ",
+          location: "Nhà hàng / Hội trường tiệc của Công ty",
+          note: "Tiệc tối liên hoan, giao lưu âm nhạc và minigame.",
+          tag: "Gala Dinner"
+        }
       ],
       gallery: {
-        badge: "CAO NGUYÊN · 10:30",
-        title: "Bàn giao xe, thảnh thơi gặp đồng nghiệp",
-        desc: "Hoàn tất trọn vẹn 2 ngày tự túc với đầu óc thư thái, công việc đã xử lý gọn gàng, sẵn sàng đón nguồn năng lượng vui vẻ từ đại gia đình công ty.",
+        badge: "GA ĐÀ LẠT · DI TÍCH LỊCH SỬ",
+        title: "Ga Đà Lạt cổ kính & Kiến trúc Cao nguyên",
+        desc: "Nhà ga xe lửa Đà Lạt xây dựng từ thời Pháp với kiến trúc 3 chóp mái mô phỏng núi Langbiang.",
         images: [
-          { url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80", label: "Gặp đoàn" },
-          { url: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=80", label: "Cà phê sáng" },
-          { url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=80", label: "Đồi thông ngút ngàn" }
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/Nh%C3%A0_ga_%C4%90%C3%A0_L%E1%BA%A1t.jpg",
+            label: "Nhà ga Đà Lạt",
+            credit: "Ảnh thực tế: Nhà ga xe lửa Đà Lạt (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+          },
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dalat_Bf_1.jpg",
+            label: "Đầu tàu hơi nước Ga ĐL",
+            credit: "Ảnh thực tế: Đường sắt & đầu tàu cổ tại Ga Đà Lạt (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+          },
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/M%E1%BB%99t_g%C3%B3c_%C4%90%C3%A0_L%E1%BA%A1t,_Vi%E1%BB%87t_Nam.jpg",
+            label: "Góc phố Đà Lạt",
+            credit: "Ảnh thực tế: Khu phố đồi dốc Đà Lạt (Nguồn: Wikimedia Commons, CC BY-SA 4.0)"
+          }
         ]
       }
     },
     {
       meta: "20–21.09.2026",
-      title: "Company Trip & Bay về chuyến 07:20 Thứ Hai",
+      title: "Lịch Đoàn & Bay Về 07:20 Thứ Hai",
       tone: "blue",
-      tip: "✈️ Sân bay Liên Khương cách trung tâm 30km đèo. Tuyệt đối không rời khách sạn sau 05:15 sáng 21/09.",
+      tip: "✈️ Sân bay Liên Khương cách 30km đèo. Cần dậy 04:45 và rời khách sạn trước 05:15.",
       items: [
-        { time: "Chủ Nhật 20.09", title: "Hoạt động Company Trip", desc: "Tham gia trọn vẹn lịch trình của công ty. Chuẩn bị sẵn hành lý trước khi đi ăn tối." },
-        { time: "04:45 (T2 21.09)", title: "⏰ Báo thức & Soát đồ bay", desc: "Kiểm tra CCCD/Hộ chiếu, laptop, sạc pin và trả phòng khách sạn đoàn." },
-        { time: "05:10", title: "Lên xe ra sân bay Liên Khương (DLI)", desc: "Di chuyển 45 phút qua cung đèo Prenn sáng sớm." },
-        { time: "06:00", title: "Có mặt tại sân bay Liên Khương", desc: "Làm thủ tục ký gửi hành lý và vào khu vực kiểm tra an ninh." },
-        { time: "07:20", title: "✈️ Cất cánh về TP.HCM (SGN)", desc: "Hạ cánh Tân Sơn Nhất lúc 08:15, kết thúc chuyến đi trọn vẹn và thư thái." }
+        {
+          time: "Chủ Nhật 20.09",
+          title: "Tham gia trọn vẹn tour Công ty",
+          location: "Theo chương trình đoàn (Ga ĐL, Vườn hoa, Workshop)",
+          note: "Trọn vẹn hoạt động tập thể cùng công ty.",
+          tag: "Company Trip"
+        },
+        {
+          time: "21:00 (Tối CN)",
+          title: "Soát đồ bay & Đặt 2 báo thức",
+          location: "Phòng khách sạn đoàn",
+          note: "Đóng vali, để sẵn CCCD/laptop. Đặt báo thức 04:30 & 04:45.",
+          tag: "Chuẩn bị bay"
+        },
+        {
+          time: "04:45 (T2 21.09)",
+          title: "Dậy & Checkout khách sạn",
+          location: "Khách sạn đoàn",
+          note: "Kiểm tra tư trang, checkout tại quầy lễ tân.",
+          tag: "Dậy sớm"
+        },
+        {
+          time: "05:10 – 05:55",
+          title: "Xe ra Sân bay Liên Khương (DLI)",
+          location: "Tuyến Trung tâm TP ➔ Đèo Prenn ➔ Sân bay (~30km)",
+          note: "Di chuyển 45 phút qua đèo Prenn sáng sớm.",
+          tag: "Ra sân bay"
+        },
+        {
+          time: "06:00 – 06:45",
+          title: "Check-in vé & Qua an ninh",
+          location: "Ga Quốc nội — Sân bay Liên Khương (DLI)",
+          note: "Gửi hành lý ký gửi, in thẻ lên tàu bay.",
+          tag: "Check-in"
+        },
+        {
+          time: "07:20",
+          title: "Cất cánh về TP.HCM (DLI ➔ SGN)",
+          location: "Chuyến bay DLI ➔ SGN",
+          note: "Hạ cánh Tân Sơn Nhất 08:15. Bắt đầu tuần làm việc mới!",
+          tag: "Hạ cánh SGN"
+        }
       ],
       gallery: {
-        badge: "SÂN BAY LIÊN KHƯƠNG · 06:00",
-        title: "Bình minh trên đường đèo & Chuyến bay về",
-        desc: "Rời phố núi khi sương mù còn giăng kín rặng thông đèo Prenn. 07:20 bay về lại TP.HCM với tinh thần tràn đầy cảm hứng cho tuần mới.",
+        badge: "SÂN BAY LIÊN KHƯƠNG & ĐÈO PRENN",
+        title: "Cung đường Đèo Prenn & Sân bay Liên Khương",
+        desc: "Tuyến cao tốc đèo Prenn nối trung tâm Đà Lạt với Sân bay Liên Khương (DLI).",
         images: [
-          { url: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=80", label: "Chuyến bay" },
-          { url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80", label: "Đèo sương mù" },
-          { url: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80", label: "Bình minh đỉnh núi" }
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/Lien_Khuong_-_Da_Lat_highway_01.jpg",
+            label: "Cao tốc Liên Khương",
+            credit: "Ảnh thực tế: Đường cao tốc Liên Khương - Đà Lạt qua đèo Prenn (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+          },
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dalat_airport.JPG",
+            label: "Sân bay Liên Khương",
+            credit: "Ảnh thực tế: Nhà ga Sân bay Liên Khương - DLI (Nguồn: Wikimedia Commons, Public Domain)"
+          },
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A1p_treo_%C4%90%C3%A0_L%E1%BA%A1t_(11).JPG",
+            label: "Rừng thông đồi núi",
+            credit: "Ảnh thực tế: Toàn cảnh rừng thông cao nguyên Lâm Viên (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+          }
         ]
       }
     }
@@ -189,22 +405,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = scheduleData[index];
     if (!data || !dayCard || !photoStoryCard) return;
 
-    // Render Timeline on Left
+    // Render Compact Timeline on Left
     dayCard.dataset.tone = data.tone;
     dayCard.innerHTML = `
       <div>
         <div class="card-top-meta">
-          <span>LỊCH TRÌNH CHI TIẾT</span>
+          <span>LỊCH TRÌNH THEO GIỜ</span>
           <span>${data.meta}</span>
         </div>
         <h3 class="day-card-title">${data.title}</h3>
         <ol class="timeline-list">
           ${data.items.map(item => `
             <li class="timeline-item">
-              <time class="timeline-time">${item.time}</time>
+              <div class="timeline-time-badge">${item.time}</div>
               <div class="timeline-text">
-                <strong>${item.title}</strong>
-                <p>${item.desc}</p>
+                <div class="timeline-item-header">
+                  <strong class="item-activity-name">${item.title}</strong>
+                  ${item.tag ? `<span class="timeline-pill-tag">${item.tag}</span>` : ''}
+                </div>
+                <div class="timeline-location-row">
+                  <span class="pin-icon">📍</span>
+                  <span class="loc-text">${item.location}</span>
+                </div>
+                <div class="timeline-short-note">${item.note}</div>
               </div>
             </li>
           `).join("")}
@@ -215,24 +438,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Render Photo Story on Right
     const gall = data.gallery;
-    const mainImg = gall.images[0].url;
+    const initialImg = gall.images[0];
 
     photoStoryCard.innerHTML = `
       <div>
         <div class="photo-frame-wrapper">
-          <img id="main-photo-frame" class="photo-frame-img" src="${mainImg}" alt="${gall.title}" loading="lazy">
+          <img id="main-photo-frame" class="photo-frame-img" src="${initialImg.url}" alt="${gall.title}" loading="lazy">
           <span class="photo-stamp-badge">${gall.badge}</span>
         </div>
 
         <div class="photo-caption-block">
           <h4 class="photo-caption-title">${gall.title}</h4>
           <p class="photo-caption-desc">${gall.desc}</p>
+          <div class="photo-credit-tag" id="main-photo-credit">📷 ${initialImg.credit}</div>
         </div>
       </div>
 
       <div class="photo-thumbs-strip">
         ${gall.images.map((img, i) => `
-          <div class="thumb-item ${i === 0 ? 'active' : ''}" data-img="${img.url}" title="${img.label}">
+          <div class="thumb-item ${i === 0 ? 'active' : ''}" data-img="${img.url}" data-credit="${img.credit}" title="${img.label}">
             <img src="${img.url}" alt="${img.label}" loading="lazy">
           </div>
         `).join("")}
@@ -245,9 +469,9 @@ document.addEventListener("DOMContentLoaded", () => {
         photoStoryCard.querySelectorAll(".thumb-item").forEach(t => t.classList.remove("active"));
         thumb.classList.add("active");
         const mainImgEl = document.getElementById("main-photo-frame");
-        if (mainImgEl) {
-          mainImgEl.src = thumb.dataset.img;
-        }
+        const creditEl = document.getElementById("main-photo-credit");
+        if (mainImgEl) mainImgEl.src = thumb.dataset.img;
+        if (creditEl) creditEl.textContent = `📷 ${thumb.dataset.credit}`;
       });
     });
 
@@ -270,11 +494,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = scheduleData[currentDayIndex];
       let text = `📅 ${data.meta} — ${data.title}\n\n`;
       data.items.forEach(it => {
-        text += `• ${it.time}: ${it.title} - ${it.desc}\n`;
+        text += `⏰ ${it.time}: ${it.title}\n`;
+        text += `   📍 ${it.location}\n`;
+        text += `   👉 ${it.note}\n\n`;
       });
-      text += `\n${data.tip}`;
+      text += `${data.tip}`;
       navigator.clipboard.writeText(text).then(() => {
-        showToast("Đã sao chép lịch trình ngày " + data.meta + " vào Clipboard!");
+        showToast("Đã sao chép lịch trình & địa điểm ngày " + data.meta + "!");
       });
     });
   }
@@ -297,26 +523,26 @@ DTSTAMP:20260917T070000Z
 DTSTART:20260917T070000Z
 DTEND:20260917T103000Z
 SUMMARY:💼 WFH Block 1 - Đà Lạt
-DESCRIPTION:Xử lý tin nhắn, approval, email sau khi nhận phòng.
-LOCATION:Khách sạn Đà Lạt
+DESCRIPTION:Xử lý tin nhắn, approval sau khi nhận phòng.
+LOCATION:57 Hoàng Diệu, P.5, Đà Lạt
 END:VEVENT
 BEGIN:VEVENT
-UID:dalat-vf3-pickup-20260917
-DTSTAMP:20260917T104500Z
-DTSTART:20260917T104500Z
-DTEND:20260917T113000Z
-SUMMARY:⚡ Nhận xe VinFast VF 3
-DESCRIPTION:Kiểm tra pin >80%, cáp sạc 220V, quay video 4 góc xe.
-LOCATION:Đà Lạt
+UID:dalat-dinner-sturgeon-20260917
+DTSTAMP:20260917T114500Z
+DTSTART:20260917T114500Z
+DTEND:20260917T133000Z
+SUMMARY:🍲 Ăn tối Lẩu Cá Tầm Ngư Sơn
+DESCRIPTION:Cá tầm tươi giòn sần sật nhúng lẩu măng chua cay.
+LOCATION:34 Trần Nhật Duật, P. Cam Ly, Đà Lạt
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-caudat-20260918
 DTSTAMP:20260918T223000Z
 DTSTART:20260918T223000Z
 DTEND:20260919T020000Z
-SUMMARY:🌄 Cầu Đất & Cà phê bên hồ
-DESCRIPTION:Rời trung tâm 05:30 -> Đồi chè 06:20 -> Cafe hồ ăn sáng 07:30.
-LOCATION:Đồi chè Cầu Đất, Đà Lạt
+SUMMARY:🌄 Đồi Chè Cầu Đất & Cafe bên hồ
+DESCRIPTION:Rời trung tâm 05:30 -> Đồi chè 06:20 -> Cafe hồ 07:30.
+LOCATION:Đồi chè Cầu Đất Farm, Xuân Trường, Đà Lạt
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-wfh-2-20260918
@@ -325,7 +551,16 @@ DTSTART:20260918T034500Z
 DTEND:20260918T093000Z
 SUMMARY:💼 WFH Block 2 (Deep Work)
 DESCRIPTION:Tập trung làm việc và họp sau buổi sáng Cầu Đất.
-LOCATION:Khách sạn / Daily Log Coffee
+LOCATION:Daily Log Coffee (15 Thông Thiên Học, Đà Lạt)
+END:VEVENT
+BEGIN:VEVENT
+UID:dalat-dinner-batoa-20260918
+DTSTAMP:20260918T120000Z
+DTSTART:20260918T120000Z
+DTEND:20260918T140000Z
+SUMMARY:🐂 Lẩu Bò Quán Gỗ Ba Toa & Kem bơ Nari
+DESCRIPTION:Thưởng thức lẩu bò nạm gân đuôi bò và kem bơ sáp.
+LOCATION:Hẻm 1/29 Hoàng Diệu, P.5, Đà Lạt
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-flight-return-20260921
@@ -333,8 +568,8 @@ DTSTAMP:20260921T002000Z
 DTSTART:20260921T002000Z
 DTEND:20260921T011500Z
 SUMMARY:✈️ Bay về TP.HCM (DLI -> SGN)
-DESCRIPTION:Chuyến bay 07:20 Liên Khương. Cần rời KS lúc 05:10!
-LOCATION:Sân bay Liên Khương (DLI)
+DESCRIPTION:Chuyến bay 07:20 Liên Khương. Cần rời khách sạn lúc 05:10!
+LOCATION:Sân bay Liên Khương (DLI), Lâm Đồng
 END:VEVENT
 END:VCALENDAR`;
 
@@ -358,12 +593,12 @@ END:VCALENDAR`;
   const plans = {
     sunny: `
       <div class="plan-alert good">
-        <strong>☀️ Kịch bản trời đẹp:</strong> Chạy thẳng Đồi chè Cầu Đất lúc 06:20. Đi bộ hít thở không khí trong lành 45 phút, chụp ảnh nắng xiên qua đồi chè, sau đó sang quán cà phê giữa hồ ngắm mặt nước phản chiếu nắng sớm.
+        <strong>☀️ Trời nắng ráo:</strong> Chạy thẳng Đồi chè Cầu Đất Farm lúc 06:20 đón nắng sớm 45 phút, sau đó sang Haiyih Coffee ngắm hồ vô cực.
       </div>
     `,
     rainy: `
       <div class="plan-alert bad">
-        <strong>🌧️ Kịch bản sương mù dày hoặc mưa nhẹ:</strong> Bỏ qua phần đồi chè ngoài trời để tránh trơn ướt. Chạy thẳng tới quán cà phê hồ nước (có mái che ấm cúng), gọi một bình trà gừng nóng hoặc cà phê sữa, mở nhạc và ngắm sương mù phủ mặt hồ. Cầu Đất mùa mưa vẫn có vẻ đẹp rất riêng!
+        <strong>🌧️ Sương mù dày / mưa nhẹ:</strong> Bỏ qua phần đồi chè ngoài trời. Vào thẳng quán sảnh kính (Haiyih Coffee / Gió Cầu Đất) gọi trà gừng nóng ngắm sương mù.
       </div>
     `
   };
@@ -405,7 +640,7 @@ END:VCALENDAR`;
     vf3Radios.forEach(r => { if (r.checked) vf3Cost = parseInt(r.value, 10); });
 
     const people = peopleCountSelect ? parseInt(peopleCountSelect.value, 10) : 2;
-    const foodPerDayPerPerson = foodBudgetSelect ? parseInt(foodBudgetSelect.value, 10) : 500000;
+    const foodPerDayPerPerson = foodBudgetSelect ? parseInt(foodBudgetSelect.value, 10) : 600000;
     const foodCost = foodPerDayPerPerson * 2 * people;
     const bufferCost = 500000;
 
@@ -429,14 +664,14 @@ END:VCALENDAR`;
      6. SMART CHECKLIST WITH LOCALSTORAGE (IN HANDBOOK VIEW)
      ========================================================================== */
   const defaultChecklist = [
-    { id: 1, text: "Đặt khách sạn 2 đêm 17–18/09 (ưu tiên có bàn làm việc và chỗ đỗ xe VF 3)", category: "vf3", done: false },
-    { id: 2, text: "Liên hệ bên thuê chốt xe VinFast VF 3 (chiều 17 đến trưa 19/09, hỏi pin & cáp sạc)", category: "vf3", done: false },
-    { id: 3, text: "Chọn trước quán cà phê ven hồ ở Cầu Đất, kiểm tra giờ mở cửa sáng sớm", category: "trip", done: false },
-    { id: 4, text: "Đóng gói thiết bị WFH: Laptop, củ sạc nhanh, chuột, tai nghe họp cách âm", category: "wfh", done: false },
-    { id: 5, text: "Chuẩn bị cục phát Wi-Fi 4G/5G dự phòng và ổ cắm chia điện", category: "wfh", done: false },
-    { id: 6, text: "Áo khoác gió nhiều lớp, khăn mỏng, ô gấp gọn và thuốc cảm/dạ dày", category: "trip", done: false },
-    { id: 7, text: "Nhắn tin đầu mối đoàn: xác nhận giờ và địa điểm nhập đoàn trưa 19/09", category: "trip", done: false },
-    { id: 8, text: "Kiểm tra giấy tờ tùy thân (CCCD / Bằng lái xe ô tô B2 để lái VF 3)", category: "vf3", done: false },
+    { id: 1, text: "Đặt bàn trước tại Lẩu cá tầm Ngư Sơn (34 Trần Nhật Duật) cho tối 17/09", category: "trip", done: false },
+    { id: 2, text: "Đặt khách sạn 2 đêm 17–18/09 (Free Style Hotel 57 Hoàng Diệu hoặc BIDV Central)", category: "vf3", done: false },
+    { id: 3, text: "Liên hệ Amazing Xanh / Thuê VF3 Đà Lạt chốt xe điện từ chiều 17 đến trưa 19/09", category: "vf3", done: false },
+    { id: 4, text: "Đóng gói thiết bị WFH: Laptop, củ sạc nhanh 65W/100W, chuột, tai nghe họp chống ồn", category: "wfh", done: false },
+    { id: 5, text: "Chuẩn bị cục phát Wi-Fi 4G/5G dự phòng và ổ cắm chia đa năng", category: "wfh", done: false },
+    { id: 6, text: "Áo khoác ấm, khăn mỏng, ô gấp và thuốc cảm/dạ dày/dầu gió", category: "trip", done: false },
+    { id: 7, text: "Nhắn tin đầu mối đoàn: xác nhận giờ và địa điểm đón đoàn trưa Thứ Bảy 19/09", category: "trip", done: false },
+    { id: 8, text: "Kiểm tra giấy tờ tùy thân (CCCD / Bằng lái xe ô tô B2 để nhận lái VF 3)", category: "vf3", done: false },
     { id: 9, text: "Đặt báo thức 04:45 sáng Thứ Hai 21/09 để ra sân bay Liên Khương chuyến 07:20", category: "trip", done: false }
   ];
 
