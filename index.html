@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="vi" data-theme="mist">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sổ tay đi sớm Đà Lạt: WFH êm nhịp, một sáng Cầu Đất, thuê xe điện VF 3 và đón company trip 17-21.09.2026.">
+    <title>Đà Lạt — Trước Khi Nhập Đoàn | 17–21.09.2026</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="nav-container">
+        <a class="brand" href="#top" title="Về đầu trang">
+          <span class="brand-monogram">ĐL</span>
+          <span class="brand-year">’26</span>
+        </a>
+
+        <!-- Primary 2-View Segmented Switcher -->
+        <div class="main-segmented-nav" role="tablist" aria-label="Chuyên mục chính">
+          <button class="seg-btn active" id="seg-btn-itinerary" data-view="itinerary" role="tab" aria-selected="true">
+            <span class="seg-icon">🌄</span>
+            <span class="seg-text">Lịch trình & Hình ảnh</span>
+          </button>
+          <button class="seg-btn" id="seg-btn-handbook" data-view="handbook" role="tab" aria-selected="false">
+            <span class="seg-icon">📋</span>
+            <span class="seg-text">Sổ tay & Tiện ích</span>
+          </button>
+        </div>
+
+        <div class="header-actions">
+          <!-- Atmosphere Mood Switcher -->
+          <div class="mood-selector" title="Đổi bầu không khí Đà Lạt">
+            <button class="mood-btn active" data-theme="mist" aria-label="Sáng sớm sương mù">
+              <span class="mood-icon">🌅</span>
+              <span class="mood-text">Sáng sớm</span>
+            </button>
+            <button class="mood-btn" data-theme="pine" aria-label="Rừng thông chiều">
+              <span class="mood-icon">🌲</span>
+              <span class="mood-text">Rừng thông</span>
+            </button>
+            <button class="mood-btn" data-theme="night" aria-label="Đêm se lạnh">
+              <span class="mood-icon">🌙</span>
+              <span class="mood-text">Đêm lạnh</span>
+            </button>
+          </div>
+
+          <!-- Ambient Sound Toggle -->
+          <button id="sound-toggle" class="sound-toggle" title="Bật/Tắt âm thanh thông reo & mưa phùn" aria-label="Âm thanh thiên nhiên">
+            <svg class="sound-wave-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path class="bar bar-1" d="M4 10v4" />
+              <path class="bar bar-2" d="M8 7v10" />
+              <path class="bar bar-3" d="M12 4v16" />
+              <path class="bar bar-4" d="M16 8v8" />
+              <path class="bar bar-5" d="M20 11v2" />
+            </svg>
+            <span class="sound-label">Tiếng gió thông</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =======================================================================
+         VIEW 1: LỊCH TRÌNH & HÌNH ẢNH (ITINERARY & VISUAL STORY)
+         ======================================================================= -->
+    <div id="view-itinerary" class="main-view active">
+      <!-- Hero Section -->
+      <section class="hero" id="top">
+        <div class="hero-backdrop">
+          <div class="ambient-sun"></div>
+          <div class="ambient-mist-layer"></div>
+          <div class="topo-grid"></div>
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-badge-group">
+            <span class="pill-badge">
+              <span class="pulse-dot"></span> 17 — 21 THÁNG 09, 2026
+            </span>
+            <span class="location-badge">📍 CAO NGUYÊN LÂM VIÊN · 1,500M ASL</span>
+          </div>
+
+          <h1 class="hero-title">
+            Đà Lạt,<br>
+            <span class="title-italic">trước khi</span> nhập đoàn.
+          </h1>
+
+          <p class="hero-lead">
+            Hai ngày làm việc có nhịp. Một buổi sáng Cầu Đất vắng vẻ. Thuê một chiếc xe điện nhỏ xinh và nhiều khoảng trống vừa đủ để ngồi bên nhau thật lâu trước khi hòa vào nhịp company trip.
+          </p>
+
+          <!-- Quick Info Ribbon -->
+          <div class="hero-meta-ribbon">
+            <div class="meta-item">
+              <span class="meta-label">CHẶNG TỰ TÚC</span>
+              <span class="meta-val">2 đêm (17–18.09)</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-label">PHƯƠNG TIỆN</span>
+              <span class="meta-val">VinFast VF 3 tự lái</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-label">WFH BLOCKS</span>
+              <span class="meta-val">3 phiên tập trung</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-label">CHUYẾN BAY VỀ</span>
+              <span class="meta-val">07:20 Thứ Hai (21.09)</span>
+            </div>
+          </div>
+
+          <div class="hero-cta-group">
+            <a class="btn-primary" href="#lich-trinh-section">
+              <span>Xem dòng thời gian</span>
+              <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            <button class="btn-secondary" id="btn-switch-to-handbook">
+              <span>Mở Sổ tay & Tiện ích →</span>
+            </button>
+            <button class="btn-ghost" id="btn-export-ics" title="Thêm lịch trình vào Google / Apple Calendar">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd" />
+              </svg>
+              <span>Đồng bộ Calendar (.ics)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Floating Info Badge -->
+        <div class="hero-floating-card">
+          <div class="card-weather-header">
+            <span class="stamp-chip">LÂM VIÊN 2026</span>
+            <span class="live-time" id="dalat-clock">ĐÀ LẠT · 16°C</span>
+          </div>
+          <div class="weather-brief">
+            <p class="weather-quote">“Cầu Đất sớm trời se lạnh, áo khoác mỏng, cà phê ấm & một chiếc đầu thoáng.”</p>
+            <div class="weather-tags">
+              <span>⛅ Sương sớm 14–16°C</span>
+              <span>☕ WFH Wi-Fi 5GHz</span>
+              <span>⚡ VF 3 sạc đầy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Tinh Thần Chuyến Đi -->
+      <section class="section intro-section">
+        <div class="section-header">
+          <p class="section-tag">01 / TRIẾT LÝ HÀNH TRÌNH</p>
+          <h2 class="section-title">Không phải “đi cho hết”.<br><em>Đi để có thời gian.</em></h2>
+        </div>
+
+        <div class="intro-grid">
+          <div class="intro-card manifesto">
+            <p class="lead-quote">
+              “Nhóm nhỏ thì không cần lịch kín. Mỗi ngày chỉ giữ đúng <strong>một điểm nhấn đáng nhớ</strong>, phần còn lại dành trọn cho công việc trôi chảy, những cuộc trò chuyện không ngắt quãng và một chút ngẫu hứng cao nguyên.”
+            </p>
+            <div class="author-note">
+              <div class="vintage-seal">
+                <svg viewBox="0 0 100 100" class="seal-svg">
+                  <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4,4"/>
+                  <path id="curve" d="M 20 50 A 30 30 0 1 1 80 50 A 30 30 0 1 1 20 50" fill="none"/>
+                  <text font-size="9" fill="currentColor" letter-spacing="2">
+                    <textPath href="#curve">· ĐÀ LẠT TRIP · NHÓM NHỎ THƯ THÁI ·</textPath>
+                  </text>
+                  <text x="50" y="55" font-size="14" font-family="Fraunces" text-anchor="middle" fill="currentColor">1500m</text>
+                </svg>
+              </div>
+              <div>
+                <strong>Chặng Đi Sớm Tự Túc</strong>
+                <span>17.09 ➔ 19.09.2026 (trước khi nhập đoàn)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="intro-pillars">
+            <div class="pillar-item">
+              <div class="pillar-num">01</div>
+              <div class="pillar-body">
+                <h3>WFH không bị cuống</h3>
+                <p>Khách sạn có bàn làm việc ổn định, quán cafe đường truyền riêng 5GHz. Chia rõ block nhận việc và block tập trung.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-num">02</div>
+              <div class="pillar-body">
+                <h3>Cầu Đất nhưng không chạy tour</h3>
+                <p>Xuất phát 05:30 nhẹ nhàng theo cung Trại Mát, ghé đồi chè lúc vừa hửng nắng và ăn sáng ở quán cà phê bên hồ tĩnh lặng.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-num">03</div>
+              <div class="pillar-body">
+                <h3>Linh hoạt với VinFast VF 3</h3>
+                <p>Xe điện nhỏ gọn luồn lách phố dốc dễ dàng, chi phí hợp lý, chủ động đón trả và tiện giao nhận gần khách sạn.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Lịch Trình Chi Tiết & Bộ Sưu Tập Ảnh Tương Tác -->
+      <section class="section schedule-section" id="lich-trinh-section">
+        <div class="schedule-top">
+          <div>
+            <p class="section-tag">02 / LỊCH TRÌNH & HÌNH ẢNH</p>
+            <h2 class="section-title">Nhịp ngày & <em>Khoảnh khắc</em></h2>
+          </div>
+          <div class="schedule-tools">
+            <span class="hint-text">Chọn từng ngày để xem lịch trình & bộ ảnh</span>
+            <button class="btn-copy-day" id="btn-copy-current-day" title="Sao chép lịch ngày này">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12a1.5 1.5 0 01.439 1.061V16.5A1.5 1.5 0 0115.5 18h-7A1.5 1.5 0 017 16.5v-13z" />
+                <path d="M5 5.5A1.5 1.5 0 003.5 7v10.5A1.5 1.5 0 005 19h7a1.5 1.5 0 001.5-1.5V17H5V5.5z" />
+              </svg>
+              <span>Sao chép ngày này</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Day Selector Tabs -->
+        <div class="day-tabs-horizontal" role="tablist" aria-label="Chọn ngày trong lịch trình">
+          <button class="tab-item-h active" data-day="0" role="tab" aria-selected="true">
+            <span class="tab-h-date">17.09</span>
+            <span class="tab-h-day">Thứ Năm</span>
+            <span class="tab-h-desc">Lên Đà Lạt & Khởi động</span>
+            <span class="tab-h-tag">WFH 1</span>
+          </button>
+
+          <button class="tab-item-h" data-day="1" role="tab" aria-selected="false">
+            <span class="tab-h-date">18.09</span>
+            <span class="tab-h-day">Thứ Sáu</span>
+            <span class="tab-h-desc">Cầu Đất sớm & Deep Work</span>
+            <span class="tab-h-tag highlight">ĐIỂM NHẤN</span>
+          </button>
+
+          <button class="tab-item-h" data-day="2" role="tab" aria-selected="false">
+            <span class="tab-h-date">19.09</span>
+            <span class="tab-h-day">Thứ Bảy</span>
+            <span class="tab-h-desc">Checkout & Nhập đoàn</span>
+            <span class="tab-h-tag">COMPANY TRIP</span>
+          </button>
+
+          <button class="tab-item-h" data-day="3" role="tab" aria-selected="false">
+            <span class="tab-h-date">20–21</span>
+            <span class="tab-h-day">CN & T2</span>
+            <span class="tab-h-desc">Lịch đoàn & Bay về 07:20</span>
+            <span class="tab-h-tag">BAY SỚM</span>
+          </button>
+        </div>
+
+        <!-- Visual Itinerary Grid (Timeline + Visual Photo Journal) -->
+        <div class="visual-itinerary-grid">
+          <!-- Left: Day Timeline Card -->
+          <article class="day-card" id="day-card">
+            <!-- Rendered by JS -->
+          </article>
+
+          <!-- Right: Visual Photo Story Card -->
+          <div class="photo-story-card" id="photo-story-card">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Cung Đường Cầu Đất & Kịch Bản Thời Tiết -->
+      <section class="section caulat-section">
+        <div class="section-header">
+          <p class="section-tag light">03 / BUỔI SÁNG NGOẠI Ô</p>
+          <h2 class="section-title light">Cầu Đất, nhưng không<br><em>săn mây cho có.</em></h2>
+        </div>
+
+        <div class="caulat-grid">
+          <div class="caulat-story">
+            <p class="lead-white">
+              Rời trung tâm lúc <strong>05:30</strong> sáng khi phố núi còn ngái ngủ. Không cần chen chúc mua vé vào các tổ hợp săn mây đông đúc hay chạy qua 5-6 điểm check-in vội vã.
+            </p>
+            <p>
+              Chỉ cần chạy dọc theo cung đường Trại Mát quanh co, đón gió lạnh đầu ngày qua những rặng thông và dừng lại ở đồi chè lúc tia nắng đầu tiên rọi qua lớp sương. Sau đó, ngồi ăn sáng muộn và nhâm nhi ly cà phê nóng ở quán ven hồ nước đến 09:00 rồi thong thả quay về thành phố.
+            </p>
+            
+            <div class="interactive-weather-toggle">
+              <div class="toggle-header">
+                <strong>Kịch bản linh hoạt theo thời tiết:</strong>
+                <div class="toggle-pill-group">
+                  <button class="plan-btn active" data-plan="sunny">☀️ Nắng ráo</button>
+                  <button class="plan-btn" data-plan="rainy">🌧️ Sương mù / Mưa</button>
+                </div>
+              </div>
+              <div class="plan-content" id="plan-display">
+                <div class="plan-alert good">
+                  <strong>Kịch bản trời đẹp:</strong> Chạy thẳng Đồi chè Cầu Đất lúc 06:20. Đi bộ hít thở không khí trong lành 45 phút, sau đó sang quán cà phê giữa hồ ngắm mặt nước phản chiếu nắng sớm.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Route Timeline -->
+          <div class="caulat-route-card">
+            <div class="route-header">
+              <span class="stamp-chip">TIMELINE CẦU ĐẤT · 18.09</span>
+              <span>Tổng quãng đường: ~24km</span>
+            </div>
+
+            <ul class="route-steps">
+              <li class="step-item">
+                <div class="step-time">05:30</div>
+                <div class="step-dot"></div>
+                <div class="step-info">
+                  <h4>Xuất phát từ Trung tâm Đà Lạt</h4>
+                  <p>Mặc áo ấm nhiều lớp, kiểm tra pin VF 3 (>60%), mang theo nước ấm.</p>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-time">06:00</div>
+                <div class="step-dot"></div>
+                <div class="step-info">
+                  <h4>Trục Trại Mát — Cung đèo thoai thoải</h4>
+                  <p>Đoạn đường đẹp nhất ngắm thung lũng đèn và sương sớm luồn qua đồi thông.</p>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-time">06:25</div>
+                <div class="step-dot"></div>
+                <div class="step-info">
+                  <h4>Đồi chè Cầu Đất lúc vừa hửng sáng</h4>
+                  <p>Không khí 14°C, vắng người. Dạo bước nhẹ, chụp ảnh kỷ niệm không cần vội.</p>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-time">07:30</div>
+                <div class="step-dot"></div>
+                <div class="step-info">
+                  <h4>Cà phê & Ăn sáng bên hồ nước</h4>
+                  <p>Mở playlist acoustic, ăn sáng nhẹ, trò chuyện thong thả tới 09:00.</p>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-time">09:30</div>
+                <div class="step-dot"></div>
+                <div class="step-info">
+                  <h4>Về lại thành phố chuẩn bị WFH</h4>
+                  <p>Về khách sạn tắm nước nóng, vào block làm việc lúc 10:45 khi đầu óc sảng khoái nhất.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Switch to Handbook Callout -->
+      <section class="section switch-callout-section">
+        <div class="callout-card">
+          <div class="callout-text">
+            <span class="stamp-chip">THÔNG TIN ĐẦY ĐỦ</span>
+            <h3>Cần xem danh sách Khách sạn, Thuê xe VF 3, Tính chi phí & Checklist?</h3>
+            <p>Toàn bộ thông tin chi tiết, địa chỉ liên hệ và công cụ tính toán được tổng hợp tại tab Sổ tay.</p>
+          </div>
+          <button class="btn-primary" id="btn-callout-handbook">
+            <span>Mở tab Sổ tay & Tiện ích →</span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- =======================================================================
+         VIEW 2: SỔ TAY & TIỆN ÍCH THỰC TẾ (HANDBOOK & TOOLS)
+         ======================================================================= -->
+    <div id="view-handbook" class="main-view">
+      <!-- Handbook Header Banner -->
+      <section class="handbook-hero">
+        <div class="handbook-hero-content">
+          <p class="section-tag light">SỔ TAY & TIỆN ÍCH THỰC TẾ</p>
+          <h1 class="handbook-hero-title">Chuẩn bị chu đáo,<br><em>nhẹ đầu trước khi đi.</em></h1>
+          <p class="handbook-hero-desc">
+            Tổng hợp toàn bộ gợi ý khách sạn WFH, 3 đơn vị thuê xe VinFast VF 3 kèm hotline, bộ tính ngân sách tự động và sổ tay checklist thông minh.
+          </p>
+        </div>
+      </section>
+
+      <!-- 1. WFH & Chỗ Ở Chọn Lọc -->
+      <section class="section handbook-section" id="handbook-stay">
+        <div class="section-header">
+          <p class="section-tag">01 / KHÔNG GIAN LÀM VIỆC & LƯU TRÚ</p>
+          <h2 class="section-title">WFH êm nhịp & <em>3 Chỗ ở chọn lọc</em></h2>
+        </div>
+
+        <!-- Work schedule 3 blocks -->
+        <div class="wfh-blocks-grid">
+          <div class="wfh-block-card">
+            <div class="wfh-tag">THỨ NĂM · 17.09</div>
+            <div class="wfh-time">14:00 – 17:30</div>
+            <h3>Block 1: Khởi động nhẹ</h3>
+            <p>Xử lý tin nhắn, email tồn đọng, duyệt approval. Không nên ôm deep work nặng ngay sau khi vừa di chuyển.</p>
+          </div>
+
+          <div class="wfh-block-card focus">
+            <div class="wfh-tag">THỨ SÁU · 18.09</div>
+            <div class="wfh-time">10:45 – 16:30</div>
+            <h3>Block 2: Deep Work chính</h3>
+            <p>Khoảng làm việc quan trọng nhất chuyến đi sau buổi sáng Cầu Đất. Đặt các cuộc họp trọng tâm sau 11:00.</p>
+          </div>
+
+          <div class="wfh-block-card">
+            <div class="wfh-tag">THỨ BẢY · 19.09</div>
+            <div class="wfh-time">08:30 – 10:00</div>
+            <h3>Block 3: Buffer phát sinh</h3>
+            <p>Xử lý nốt các đầu việc gấp, kiểm tra lại với team trước khi chuyển khách sạn hoặc nhập đoàn công ty.</p>
+          </div>
+        </div>
+
+        <div class="stay-header-group">
+          <div>
+            <h3 class="subsection-title">Gợi ý chỗ ở 2 đêm tự túc (17–18/09)</h3>
+            <p class="subsection-desc">Tiêu chí: Wi-Fi ổn định, có bàn làm việc, có bãi đỗ xe cho VF 3 và thuận tiện gặp đoàn.</p>
+          </div>
+        </div>
+
+        <div class="stay-cards-grid">
+          <!-- Hotel 1 -->
+          <div class="hotel-card best-pick">
+            <div class="hotel-badge">⭐ ĐÁNH GIÁ CAO NHẤT (9.7)</div>
+            <div class="hotel-head">
+              <h4>Free Style Hotel Dalat</h4>
+              <span class="hotel-price">~1.3M – 2.6M / 2 đêm</span>
+            </div>
+            <p class="hotel-desc">Boutique hiện đại, sạch đẹp, cảm giác nghỉ dưỡng cao cấp nhưng vẫn cực kỳ tiện làm việc.</p>
+            <ul class="hotel-perks">
+              <li><span>📶</span> Wi-Fi tốc độ cao & bàn làm việc</li>
+              <li><span>🚗</span> Bãi đỗ xe riêng miễn phí (tiện sạc/đỗ VF3)</li>
+              <li><span>🚶</span> Cách Hồ Xuân Hương / Quảng trường ~12–13 phút đi bộ</li>
+            </ul>
+            <div class="hotel-verdict">
+              <strong>Phù hợp nhất:</strong> Muốn ở đẹp, yên tĩnh, view thoáng và thoải mái tối đa 2 đêm.
+            </div>
+          </div>
+
+          <!-- Hotel 2 -->
+          <div class="hotel-card">
+            <div class="hotel-badge alt">💼 THỰC DỤNG & GIÁ TỐT (8.7)</div>
+            <div class="hotel-head">
+              <h4>BIDV Central Da Lat Hotel</h4>
+              <span class="hotel-price">~1.0M – 1.6M / 2 đêm</span>
+            </div>
+            <p class="hotel-desc">Phòng ốc tiêu chuẩn chỉn chu, bàn làm việc bài bản, vị trí trung tâm thuận tiện di chuyển.</p>
+            <ul class="hotel-perks">
+              <li><span>📶</span> Điểm Wi-Fi 8.1, bàn làm việc tiêu chuẩn</li>
+              <li><span>🚗</span> Bãi đậu xe riêng miễn phí rộng rãi</li>
+              <li><span>📍</span> Gần Nhà điên Hang Nga, dễ bắt đường lớn</li>
+            </ul>
+            <div class="hotel-verdict">
+              <strong>Phù hợp nhất:</strong> Ưu tiên thực dụng, bài toán kinh tế hợp lý và dễ WFH.
+            </div>
+          </div>
+
+          <!-- Hotel 3 -->
+          <div class="hotel-card">
+            <div class="hotel-badge alt">🌊 SÁT HỒ XUÂN HƯƠNG</div>
+            <div class="hotel-head">
+              <h4>DaLat Wind Hotel</h4>
+              <span class="hotel-price">Từ ~500k / đêm</span>
+            </div>
+            <p class="hotel-desc">Cách Hồ Xuân Hương chỉ ~500m, tiện đi bộ ra ngắm hồ buổi chiều tối và gặp đoàn.</p>
+            <ul class="hotel-perks">
+              <li><span>📶</span> Free Wi-Fi & bàn làm việc cơ bản</li>
+              <li><span>🚗</span> Chỗ đỗ xe ô tô miễn phí</li>
+              <li><span>🚶</span> Đi bộ 5 phút ra mép hồ Xuân Hương</li>
+            </ul>
+            <div class="hotel-verdict">
+              <strong>Phù hợp nhất:</strong> Thích không gian sát hồ trung tâm, tiết kiệm chi phí.
+            </div>
+          </div>
+        </div>
+
+        <!-- Backup Cafe WFH spots -->
+        <div class="cafe-backup-box">
+          <div class="cafe-backup-title">
+            <span class="tag-pin">PLAN B</span>
+            <h4>Quán cà phê yên tĩnh cho ngày cần đổi gió WFH</h4>
+          </div>
+          <div class="cafe-grid">
+            <div class="cafe-item">
+              <strong>☕ Daily Log Coffee (15 Thông Thiên Học)</strong>
+              <p>Trang bị Wi-Fi 5GHz đường truyền riêng, 100% bàn có ổ cắm, mở cửa 07:30–22:30. Cực kỳ thích hợp nếu cần họp voice/video hoặc ngồi cày code dài.</p>
+            </div>
+            <div class="cafe-item">
+              <strong>☕ La Viet Coffee (200 Nguyễn Công Trứ)</strong>
+              <p>Xưởng cà phê đặc sản nổi tiếng, có tầng yên tĩnh và không gian truyền cảm hứng sáng tạo cho nửa ngày đổi không khí.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Sổ Tay Thuê Xe Điện VF 3 -->
+      <section class="section handbook-section" id="handbook-vf3">
+        <div class="section-header">
+          <p class="section-tag">02 / DI CHUYỂN NỘI THÀNH</p>
+          <h2 class="section-title">Thuê xe điện VinFast VF 3<br><em>nhỏ gọn, leo dốc khoẻ</em></h2>
+        </div>
+
+        <div class="vf3-container">
+          <div class="vf3-tips-card">
+            <div class="vf3-banner">
+              <div class="vf3-model-pill">⚡ VINFAST VF 3 · TỰ LÁI</div>
+              <h3>Tại sao chọn VF 3 cho Đà Lạt?</h3>
+              <p>Bán kính quay đầu nhỏ, leo dốc Đà Lạt êm ái không bị trôi xe, dễ căn lề ở các cung đường hẹp và chi phí thuê cực kỳ tiết kiệm.</p>
+            </div>
+
+            <h4 class="tips-subheading">📋 6 Điểm cần chốt khi nhận xe:</h4>
+            <div class="tips-list">
+              <div class="tip-check">
+                <span class="check-icon">✓</span>
+                <div><strong>Kiểm tra pin bàn giao:</strong> Yêu cầu pin lúc nhận >80% để thoải mái đi Cầu Đất.</div>
+              </div>
+              <div class="tip-check">
+                <span class="check-icon">✓</span>
+                <div><strong>Cáp sạc di động:</strong> Hỏi rõ có kèm bộ sạc 220V để cắm nhờ tại khách sạn không.</div>
+              </div>
+              <div class="tip-check">
+                <span class="check-icon">✓</span>
+                <div><strong>Quay video 4 góc:</strong> Chụp lại mâm, cản trước sau và kính xe lúc nhận.</div>
+              </div>
+              <div class="tip-check">
+                <span class="check-icon">✓</span>
+                <div><strong>Giới hạn km:</strong> Xác nhận số km tối đa trong ngày và phí phụ trội nếu vượt.</div>
+              </div>
+              <div class="tip-check">
+                <span class="check-icon">✓</span>
+                <div><strong>Thời gian thuê tối ưu:</strong> Từ chiều 17/09 đến trưa 19/09 (trước giờ nhập đoàn).</div>
+              </div>
+              <div class="tip-check">
+                <span class="check-icon">✓</span>
+                <div><strong>Hotline cứu hộ:</strong> Lưu số kỹ thuật phòng trường hợp cần hỗ trợ sạc/lỗi pin.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="vf3-providers">
+            <h3 class="subsection-title">3 Đơn vị cho thuê VF 3 uy tín</h3>
+
+            <div class="provider-card">
+              <div class="provider-header">
+                <div>
+                  <h4>Amazing Xanh</h4>
+                  <span class="provider-addr">📍 14 Đống Đa, P.3, Đà Lạt</span>
+                </div>
+                <span class="price-chip">~500k – 600k / ngày</span>
+              </div>
+              <p>Chuyên xe điện du lịch xanh tại Đà Lạt, hỗ trợ tư vấn các điểm sạc và giao xe nội thành.</p>
+              <div class="provider-actions">
+                <button class="btn-copy-action" data-copy="19008649">
+                  <span>📞 Hotline: 1900 8649</span>
+                  <span class="copy-hint">Sao chép</span>
+                </button>
+                <button class="btn-copy-action" data-copy="0942271196">
+                  <span>📱 0942 271 196</span>
+                  <span class="copy-hint">Sao chép</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="provider-card">
+              <div class="provider-header">
+                <div>
+                  <h4>Thuê VF3 Đà Lạt</h4>
+                  <span class="provider-addr">📍 147 Nguyễn Trung Trực, P.3</span>
+                </div>
+                <span class="price-chip">Giao tận nơi 10km</span>
+              </div>
+              <p>Dịch vụ chuyên biệt dòng VF3 tự lái, hỗ trợ giao và nhận xe tận khách sạn hoặc điểm hẹn.</p>
+              <div class="provider-actions">
+                <button class="btn-copy-action" data-copy="0333103144">
+                  <span>📱 SĐT: 0333 103 144</span>
+                  <span class="copy-hint">Sao chép</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="provider-card">
+              <div class="provider-header">
+                <div>
+                  <h4>Lâm Đồng Tours</h4>
+                  <span class="provider-addr">📍 Đà Lạt & Bảo Lộc</span>
+                </div>
+                <span class="price-chip">500k (T2-T5) · 550k (T6-CN)</span>
+              </div>
+              <p>Bảng giá niêm yết rõ ràng theo ngày trong tuần và cuối tuần, phù hợp tham khảo để so sánh.</p>
+              <div class="provider-actions">
+                <span class="badge-neutral">Thuê trên 3 ngày: 450k/ngày</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Dự Toán Chi Phí Tự Túc -->
+      <section class="section handbook-section" id="handbook-budget">
+        <div class="section-header">
+          <p class="section-tag">03 / TÍNH TOÁN NGÂN SÁCH</p>
+          <h2 class="section-title">Dự toán chi phí <em>2 ngày tự túc</em></h2>
+        </div>
+
+        <div class="budget-calculator-card">
+          <div class="calculator-inputs">
+            <h3>Chọn cấu hình chuyến đi của bạn:</h3>
+
+            <div class="calc-group">
+              <label class="calc-label">1. Hạng khách sạn (2 đêm 17–18/09):</label>
+              <div class="calc-radio-group">
+                <label class="calc-radio">
+                  <input type="radio" name="hotel-tier" value="1800000" checked>
+                  <span class="radio-box">
+                    <strong>Boutique cao cấp</strong>
+                    <small>Free Style Hotel ~1.800.000đ</small>
+                  </span>
+                </label>
+                <label class="calc-radio">
+                  <input type="radio" name="hotel-tier" value="1200000">
+                  <span class="radio-box">
+                    <strong>Tiêu chuẩn WFH</strong>
+                    <small>BIDV Central ~1.200.000đ</small>
+                  </span>
+                </label>
+                <label class="calc-radio">
+                  <input type="radio" name="hotel-tier" value="1000000">
+                  <span class="radio-box">
+                    <strong>Tiết kiệm gần hồ</strong>
+                    <small>DaLat Wind ~1.000.000đ</small>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label">2. Thuê xe VinFast VF 3:</label>
+              <div class="calc-radio-group">
+                <label class="calc-radio">
+                  <input type="radio" name="vf3-opt" value="1100000" checked>
+                  <span class="radio-box">
+                    <strong>Thuê trọn 2 ngày</strong>
+                    <small>Chiều 17 đến trưa 19 (~1.100.000đ)</small>
+                  </span>
+                </label>
+                <label class="calc-radio">
+                  <input type="radio" name="vf3-opt" value="550000">
+                  <span class="radio-box">
+                    <strong>Thuê 1 ngày (đi Cầu Đất)</strong>
+                    <small>Thứ Sáu 18/09 (~550.000đ)</small>
+                  </span>
+                </label>
+                <label class="calc-radio">
+                  <input type="radio" name="vf3-opt" value="0">
+                  <span class="radio-box">
+                    <strong>Đi Taxi / Xe máy riêng</strong>
+                    <small>0đ tiền thuê xe điện</small>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="calc-row-2">
+              <div class="calc-group">
+                <label class="calc-label">3. Số người đi cùng:</label>
+                <select id="people-count" class="calc-select">
+                  <option value="1">1 người (Tự túc một mình)</option>
+                  <option value="2" selected>2 người (Cùng chia sẻ chi phí)</option>
+                  <option value="3">3 người (Nhóm nhỏ WFH)</option>
+                </select>
+              </div>
+
+              <div class="calc-group">
+                <label class="calc-label">4. Mức ăn uống & Cafe/ngày/người:</label>
+                <select id="food-budget" class="calc-select">
+                  <option value="300000">Thong thả nhẹ nhàng (300k/ngày)</option>
+                  <option value="500000" selected>Ăn ngon & Cafe đẹp (500k/ngày)</option>
+                  <option value="700000">Thoải mái khám phá ẩm thực (700k/ngày)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="calculator-summary">
+            <div class="summary-header">
+              <span class="stamp-chip">BẢNG TỔNG KẾT NGÂN SÁCH</span>
+              <span class="tag-note">Đã gồm 500k dự phòng</span>
+            </div>
+
+            <div class="summary-lines">
+              <div class="s-line">
+                <span>Khách sạn (2 đêm):</span>
+                <strong id="sum-hotel">1.800.000đ</strong>
+              </div>
+              <div class="s-line">
+                <span>Thuê xe VF 3:</span>
+                <strong id="sum-vf3">1.100.000đ</strong>
+              </div>
+              <div class="s-line">
+                <span>Ăn uống & Cafe (2 ngày):</span>
+                <strong id="sum-food">2.000.000đ</strong>
+              </div>
+              <div class="s-line">
+                <span>Dự phòng phát sinh:</span>
+                <strong>500.000đ</strong>
+              </div>
+            </div>
+
+            <div class="summary-total">
+              <div>
+                <span class="total-label">TỔNG DỰ TOÁN NHÓM</span>
+                <div class="total-amount" id="sum-total">5.400.000đ</div>
+              </div>
+              <div class="per-person-box">
+                <span class="per-label">Chia trên đầu người:</span>
+                <span class="per-val" id="sum-per-person">2.700.000đ / người</span>
+              </div>
+            </div>
+            <p class="budget-disclaimer">* Chi phí chưa bao gồm vé máy bay/xe khách từ TP.HCM lên Đà Lạt và chặng Company trip (do công ty tài trợ).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Sổ Tay Checklist Chuẩn Bị -->
+      <section class="section handbook-section" id="handbook-checklist">
+        <div class="notes-header-flex">
+          <div>
+            <p class="section-tag">04 / SỔ TAY CHUẨN BỊ</p>
+            <h2 class="section-title">Nhẹ đầu<br><em>trước khi lên xe.</em></h2>
+          </div>
+
+          <div class="checklist-progress-card">
+            <div class="progress-info">
+              <span class="progress-title">Tiến độ chuẩn bị:</span>
+              <span class="progress-percentage" id="checklist-percentage">0%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="checklist-bar" style="width: 0%"></div>
+            </div>
+            <span class="progress-count" id="checklist-count">0/9 mục hoàn thành</span>
+          </div>
+        </div>
+
+        <div class="checklist-interactive-wrapper">
+          <div class="checklist-filters">
+            <button class="filter-btn active" data-filter="all">Tất cả</button>
+            <button class="filter-btn" data-filter="wfh">💼 Đồ WFH</button>
+            <button class="filter-btn" data-filter="vf3">🚗 Xe VF 3 & Khách sạn</button>
+            <button class="filter-btn" data-filter="trip">🏢 Lịch đoàn & Đồ cá nhân</button>
+          </div>
+
+          <div class="checklist-items" id="checklist-container">
+            <!-- Rendered by JavaScript with localStorage -->
+          </div>
+
+          <form id="add-item-form" class="add-item-form">
+            <input type="text" id="new-item-input" placeholder="+ Thêm việc hoặc đồ dùng cá nhân cần nhớ..." required>
+            <button type="submit" class="btn-add-item">Thêm mục</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- 5. Chuyến Bay Về 21/09 -->
+      <section class="section handbook-section flight-section" id="handbook-flight">
+        <div class="flight-container">
+          <div class="flight-hero-text">
+            <p class="section-tag light">05 / CHUYẾN BAY VỀ</p>
+            <h2 class="flight-title">Sáng Thứ Hai 21/09:<br><em>Chuyến bay 07:20 Liên Khương</em></h2>
+            <p class="flight-lead">
+              Khoảng cách từ trung tâm Đà Lạt đến sân bay Liên Khương (DLI) khoảng <strong>28–31km</strong> (mất 45 phút chạy xe đèo). Cần dậy sớm và rời khách sạn trước 05:15 để không bị trễ an ninh.
+            </p>
+          </div>
+
+          <div class="flight-timeline-card">
+            <div class="flight-header-badge">
+              <span>✈️ CHUYẾN BAY DLI ➔ SGN · 07:20</span>
+              <span class="flight-tag">AN TOÀN TUYỆT ĐỐI</span>
+            </div>
+
+            <div class="flight-milestones">
+              <div class="milestone">
+                <span class="m-time">04:45</span>
+                <span class="m-title">Báo thức & Đóng đồ</span>
+                <p class="m-desc">Soát lại laptop, sạc, CCCD/hộ chiếu và trả phòng khách sạn.</p>
+              </div>
+
+              <div class="milestone">
+                <span class="m-time">05:10</span>
+                <span class="m-title">Lên xe ra sân bay</span>
+                <p class="m-desc">Không rời khách sạn sau 05:15 để phòng sương mù đèo Prenn.</p>
+              </div>
+
+              <div class="milestone">
+                <span class="m-time">06:00</span>
+                <span class="m-title">Có mặt tại Liên Khương</span>
+                <p class="m-desc">Check-in quầy ký gửi (nếu có) và xếp hàng qua cửa kiểm tra an ninh.</p>
+              </div>
+
+              <div class="milestone highlight">
+                <span class="m-time">07:20</span>
+                <span class="m-title">Cất cánh về lại TP.HCM</span>
+                <p class="m-desc">Về lại Sài Gòn lúc 08:15, kịp giờ làm việc đầu tuần với tâm thế thư thái.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <span class="brand-monogram">ĐL</span>
+            <span class="brand-sub">CAO NGUYÊN LÂM VIÊN · 2026</span>
+          </div>
+          <p class="footer-tagline">“Đi để có thời gian. Làm việc có nhịp và gom về những buổi sáng trong lành.”</p>
+        </div>
+
+        <div class="footer-links-col">
+          <strong>CHUYÊN MỤC</strong>
+          <a href="#" class="footer-view-link" data-view="itinerary">🌄 Lịch trình & Hình ảnh</a>
+          <a href="#" class="footer-view-link" data-view="handbook">📋 Sổ tay & Tiện ích</a>
+          <a href="#top">Lên đầu trang ↑</a>
+        </div>
+
+        <div class="footer-info-col">
+          <strong>THỜI GIAN CHUYẾN ĐI</strong>
+          <p>17.09.2026 — 21.09.2026</p>
+          <p>Đà Lạt, Lâm Đồng, Việt Nam</p>
+          <div class="footer-credits">
+            Crafted with care for the team trip 🌿
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>
