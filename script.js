@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSwitchToHandbook = document.getElementById("btn-switch-to-handbook");
   const footerViewLinks = document.querySelectorAll(".footer-view-link");
   const handbookTargetLinks = document.querySelectorAll("[data-handbook-target]");
+  const btnCopyFlightUrl = document.getElementById("btn-copy-flight-url");
   const btnCopyFlightGuide = document.getElementById("btn-copy-flight-guide");
 
   function switchMainView(viewName, scrollTarget = null) {
@@ -173,6 +174,29 @@ document.addEventListener("DOMContentLoaded", () => {
       showToast("Đã sao chép cẩm nang bay vào clipboard!");
       btnCopyFlightGuide.textContent = "✓ Đã sao chép tóm tắt";
       setTimeout(() => { btnCopyFlightGuide.textContent = "📋 Sao chép tóm tắt gửi nhóm"; }, 2000);
+    });
+  }
+
+  if (btnCopyFlightUrl) {
+    btnCopyFlightUrl.addEventListener("click", async () => {
+      const guideUrl = new URL("#so-tay-bay", window.location.href).href;
+      try {
+        if (!navigator.clipboard) throw new Error("Clipboard API unavailable");
+        await navigator.clipboard.writeText(guideUrl);
+      } catch {
+        const input = document.createElement("textarea");
+        input.value = guideUrl;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.opacity = "0";
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+      }
+      showToast("Đã sao chép link mở thẳng cẩm nang bay!");
+      btnCopyFlightUrl.textContent = "✓ Đã sao chép link";
+      setTimeout(() => { btnCopyFlightUrl.textContent = "🔗 Sao chép link mở thẳng"; }, 2000);
     });
   }
 

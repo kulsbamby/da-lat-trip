@@ -2153,8 +2153,14 @@ body::before {
   line-height: 1.5;
 }
 
-.btn-copy-flight-guide {
+.flight-guide-actions {
+  display: flex;
   flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-copy-flight-guide {
   padding: 10px 14px;
   border-radius: var(--radius-pill);
   background: var(--pine-800);
@@ -2165,6 +2171,19 @@ body::before {
 }
 
 .btn-copy-flight-guide:hover { background: var(--pine-600); }
+
+.btn-copy-flight-summary {
+  padding: 8px 14px;
+  border: 1px solid #94bca9;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: #276a4f;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.btn-copy-flight-summary:hover { background: rgba(39, 106, 79, 0.08); }
 
 .flight-tips-grid {
   display: grid;
@@ -2733,6 +2752,10 @@ body::before {
   .btn-copy-flight-guide {
     width: 100%;
   }
+
+  .flight-guide-actions { width: 100%; }
+
+  .btn-copy-flight-summary { width: 100%; }
 
   .section {
     padding: 28px 14px;
