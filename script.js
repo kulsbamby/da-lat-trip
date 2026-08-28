@@ -1,6 +1,6 @@
 /**
  * ĐÀ LẠT TRIP 2026 — 2-VIEW INTERACTIVE ENGINE
- * Compact, high-readability, location-first itinerary & verified Da Lat imagery.
+ * 5 Distinct Days (17, 18, 19, 20, 21.09), Location-First & Verified Da Lat Imagery.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -66,14 +66,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ==========================================================================
-     2. STREAMLINED TIMELINE & LOCATION DATA
+     2. STREAMLINED TIMELINE & LOCATION DATA (5 DISTINCT DAYS)
      ========================================================================== */
   const scheduleData = [
     {
       meta: "THỨ NĂM · 17.09.2026",
-      title: "Lên Đà Lạt, WFH & Lẩu Cá Tầm",
+      slogan: "Chạm ngõ phố sương",
+      title: "Chạm ngõ phố sương: Làm việc nhẹ tênh, tối quây quần lẩu cá tầm",
       tone: "mist",
-      tip: "💡 Nhận xe VF 3 kiểm tra pin >80% & đặt bàn trước Lẩu cá tầm Ngư Sơn.",
+      tip: "💡 Nhận phòng thảnh thơi, chiều làm việc vừa sức để dành trọn buổi tối cho nồi lẩu cá tầm nóng hổi.",
       items: [
         {
           time: "09:30 – 11:30",
@@ -150,9 +151,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       meta: "THỨ SÁU · 18.09.2026",
-      title: "Cầu Đất Sớm, Deep Work & Lẩu Bò",
+      slogan: "Sớm mai Cầu Đất",
+      title: "Sớm mai Cầu Đất: Đón nắng đồi chè, dứt điểm việc tuần & lẩu bò Ba Toa",
       tone: "pine",
-      tip: "🌿 05:30 xuất phát đi Cầu Đất đường vắng, chiều xong việc ăn Lẩu bò Ba Toa & Kem bơ Nari.",
+      tip: "🌿 05:30 xuất phát đón trọn không khí 14°C trong veo, chiều Deep Work xong là thoải mái xả hơi cuối tuần.",
       items: [
         {
           time: "05:30 – 06:15",
@@ -250,9 +252,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       meta: "THỨ BẢY · 19.09.2026",
-      title: "Trả Xe VF 3 & Nhập Đoàn Company Trip",
+      slogan: "Hòa nhịp đồng đội",
+      title: "Hòa nhịp đồng đội: Thong thả nhập đoàn, teambuilding & tiệc Gala",
       tone: "clay",
-      tip: "🤝 Trả xe VF 3 trước 11:30 để kịp ăn trưa và check-in cùng đoàn công ty.",
+      tip: "🤝 Trả xe VF 3 thong thả trước trưa để nhập đoàn ăn bữa cơm sum vầy và quẩy hết mình tiệc tối.",
       items: [
         {
           time: "07:30 – 08:30",
@@ -321,56 +324,130 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     {
-      meta: "20–21.09.2026",
-      title: "Lịch Đoàn & Bay Về 07:20 Thứ Hai",
+      meta: "CHỦ NHẬT · 20.09.2026",
+      slogan: "Khám phá cùng đoàn",
+      title: "Khám phá cùng đoàn: Trọn vẹn tour công ty, mua quà & chuẩn bị bay",
       tone: "blue",
-      tip: "✈️ Sân bay Liên Khương cách 30km đèo. Cần dậy 04:45 và rời khách sạn trước 05:15.",
+      tip: "⚠️ 21:00 tối Chủ Nhật soát hành lý kỹ, để sẵn CCCD/laptop và đặt 2 báo thức lúc 04:30 & 04:45.",
       items: [
         {
-          time: "Chủ Nhật 20.09",
-          title: "Tham gia trọn vẹn tour Công ty",
-          location: "Theo chương trình đoàn (Ga ĐL, Vườn hoa, Workshop)",
-          note: "Trọn vẹn hoạt động tập thể cùng công ty.",
-          tag: "Company Trip"
+          time: "07:30 – 08:30",
+          title: "Ăn sáng buffet cùng đoàn công ty",
+          location: "Nhà hàng khách sạn của đoàn công ty",
+          note: "Nạp năng lượng cho ngày tham quan trải nghiệm trọn vẹn.",
+          tag: "Ăn sáng"
         },
         {
-          time: "21:00 (Tối CN)",
-          title: "Soát đồ bay & Đặt 2 báo thức",
+          time: "08:45 – 11:45",
+          title: "Tham quan & Chụp ảnh kỷ niệm đoàn",
+          location: "Theo chương trình BTC (Ga Đà Lạt, Vườn hoa TP, Dinh Bảo Đại)",
+          note: "Chụp ảnh tập thể kỷ niệm chuyến đi của toàn công ty.",
+          tag: "Tour đoàn"
+        },
+        {
+          time: "12:00 – 13:30",
+          title: "Ăn trưa cơm niêu / ẩm thực đặc sản",
+          location: "Nhà hàng theo tour công ty",
+          note: "Thưởng thức ẩm thực cao nguyên cùng đồng nghiệp.",
+          tag: "Ăn trưa"
+        },
+        {
+          time: "14:00 – 17:00",
+          title: "Hoạt động tự do & Mua đặc sản làm quà",
+          location: "Vườn dâu tây công nghệ cao / Chợ Đà Lạt / Lò sấy mứt",
+          note: "Mua dâu tây tươi, hồng giòn sấy gió, trà atiso biếu gia đình.",
+          tag: "Mua sắm"
+        },
+        {
+          time: "18:00 – 20:30",
+          title: "Bữa tối ấm cúng chia tay chuyến đi",
+          location: "Nhà hàng ẩm thực Đà Lạt",
+          note: "Bữa cơm tổng kết, nâng ly khép lại chuỗi ngày gắn kết.",
+          tag: "Bữa tối"
+        },
+        {
+          time: "21:00 – 21:30",
+          title: "Soát vali bay sớm & Đặt 2 báo thức",
           location: "Phòng khách sạn đoàn",
-          note: "Đóng vali, để sẵn CCCD/laptop. Đặt báo thức 04:30 & 04:45.",
-          tag: "Chuẩn bị bay"
-        },
+          note: "Đóng vali, để CCCD/laptop ngăn ngoài. Đặt báo thức 04:30 & 04:45.",
+          tag: "Soát đồ bay"
+        }
+      ],
+      gallery: {
+        badge: "ĐÀ LẠT · TOUR ĐOÀN & VƯỜN HOA",
+        title: "Thiên nhiên & Danh thắng Phố Núi",
+        desc: "Khám phá các điểm đến danh tiếng cùng đồng nghiệp trong ngày cuối tại Đà Lạt.",
+        images: [
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A1p_treo_%C4%90%C3%A0_L%E1%BA%A1t_(11).JPG",
+            label: "Đồi thông Robin",
+            credit: "Ảnh thực tế: Toàn cảnh rừng thông cao nguyên Lâm Viên (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+          },
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/Nh%C3%A0_ga_%C4%90%C3%A0_L%E1%BA%A1t.jpg",
+            label: "Ga xe lửa Đà Lạt",
+            credit: "Ảnh thực tế: Nhà ga xe lửa Đà Lạt (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+          },
+          {
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/M%E1%BB%99t_g%C3%B3c_%C4%90%C3%A0_L%E1%BA%A1t,_Vi%E1%BB%87t_Nam.jpg",
+            label: "Phố dốc Đà Lạt",
+            credit: "Ảnh thực tế: Khu phố đồi dốc Đà Lạt (Nguồn: Wikimedia Commons, CC BY-SA 4.0)"
+          }
+        ]
+      }
+    },
+    {
+      meta: "THỨ HAI · 21.09.2026",
+      slogan: "Cất cánh rạng đông",
+      title: "Cất cánh rạng đông: Ra sân bay sớm 05:10, chuyến bay 07:20 về TP.HCM",
+      tone: "blue",
+      tip: "✈️ Sân bay Liên Khương cách trung tâm 30km đèo (45 phút xe). Tuyệt đối không rời khách sạn sau 05:15.",
+      items: [
         {
-          time: "04:45 (T2 21.09)",
-          title: "Dậy & Checkout khách sạn",
-          location: "Khách sạn đoàn",
-          note: "Kiểm tra tư trang, checkout tại quầy lễ tân.",
+          time: "04:45",
+          title: "Báo thức dậy & Checkout khách sạn",
+          location: "Sảnh khách sạn đoàn công ty",
+          note: "Rửa mặt tỉnh táo, kiểm tra kỹ phòng và làm thủ tục checkout lễ tân.",
           tag: "Dậy sớm"
         },
         {
           time: "05:10 – 05:55",
-          title: "Xe ra Sân bay Liên Khương (DLI)",
-          location: "Tuyến Trung tâm TP ➔ Đèo Prenn ➔ Sân bay (~30km)",
-          note: "Di chuyển 45 phút qua đèo Prenn sáng sớm.",
+          title: "Lên xe ra Sân bay Liên Khương (DLI)",
+          location: "Tuyến Trung tâm TP ➔ Đèo Prenn ➔ Sân bay Liên Khương (~30km)",
+          note: "Di chuyển 45 phút qua cung đèo Prenn sương sớm.",
           tag: "Ra sân bay"
         },
         {
           time: "06:00 – 06:45",
-          title: "Check-in vé & Qua an ninh",
+          title: "Check-in quầy vé & Kiểm tra an ninh",
           location: "Ga Quốc nội — Sân bay Liên Khương (DLI)",
-          note: "Gửi hành lý ký gửi, in thẻ lên tàu bay.",
+          note: "Gửi hành lý ký gửi, in thẻ lên tàu bay và vào phòng chờ.",
           tag: "Check-in"
         },
         {
+          time: "06:50 – 07:15",
+          title: "Lên máy bay & Ổn định chỗ ngồi",
+          location: "Cửa khởi hành (Boarding Gate) — DLI",
+          note: "Xếp hàng lên tàu bay, cất hành lý xách tay gọn gàng.",
+          tag: "Boarding"
+        },
+        {
           time: "07:20",
-          title: "Cất cánh về TP.HCM (DLI ➔ SGN)",
+          title: "Cất cánh chuyến bay Liên Khương ➔ TP.HCM",
           location: "Chuyến bay DLI ➔ SGN",
-          note: "Hạ cánh Tân Sơn Nhất 08:15. Bắt đầu tuần làm việc mới!",
+          note: "Thời gian bay 55 phút. Ngắm mây bồng bềnh trên cao nguyên.",
+          tag: "Cất cánh"
+        },
+        {
+          time: "08:15",
+          title: "Hạ cánh Tân Sơn Nhất (SGN)",
+          location: "Ga Quốc nội — Sân bay Quốc tế Tân Sơn Nhất, TP.HCM",
+          note: "Lấy hành lý ký gửi. Khởi đầu tuần làm việc mới tràn đầy năng lượng!",
           tag: "Hạ cánh SGN"
         }
       ],
       gallery: {
-        badge: "SÂN BAY LIÊN KHƯƠNG & ĐÈO PRENN",
+        badge: "SÂN BAY LIÊN KHƯƠNG · DLI",
         title: "Cung đường Đèo Prenn & Sân bay Liên Khương",
         desc: "Tuyến cao tốc đèo Prenn nối trung tâm Đà Lạt với Sân bay Liên Khương (DLI).",
         images: [
@@ -385,9 +462,9 @@ document.addEventListener("DOMContentLoaded", () => {
             credit: "Ảnh thực tế: Nhà ga Sân bay Liên Khương - DLI (Nguồn: Wikimedia Commons, Public Domain)"
           },
           {
-            url: "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A1p_treo_%C4%90%C3%A0_L%E1%BA%A1t_(11).JPG",
-            label: "Rừng thông đồi núi",
-            credit: "Ảnh thực tế: Toàn cảnh rừng thông cao nguyên Lâm Viên (Nguồn: Wikimedia Commons, CC BY-SA 3.0)"
+            url: "https://commons.wikimedia.org/wiki/Special:FilePath/Th%C3%A1c_Prenn,_062015.jpg",
+            label: "Đèo Prenn sương sớm",
+            credit: "Ảnh thực tế: Đồi núi cao nguyên Lâm Đồng (Nguồn: Wikimedia Commons, CC BY-SA 4.0)"
           }
         ]
       }
@@ -400,6 +477,55 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabButtonsH = document.querySelectorAll(".day-tabs-horizontal .tab-item-h");
   const btnCopyDay = document.getElementById("btn-copy-current-day");
 
+  function tagTone(tag = "") {
+    const value = tag.toLowerCase();
+    if (/wfh|deep work|dọn việc|dọn đồ/.test(value)) return "work";
+    if (/ăn|bữa tối|cafe|gala dinner/.test(value)) return "food";
+    if (/xe|di chuyển|về phố|trả xe|ra sân bay/.test(value)) return "travel";
+    if (/cầu đất|chill|team trip|tour đoàn|mua sắm/.test(value)) return "experience";
+    if (/boarding|cất cánh|hạ cánh|dậy sớm|soát đồ bay|nhập đoàn|check-in|nghỉ ngơi/.test(value)) return "logistics";
+    return "default";
+  }
+
+  function periodForTime(time = "") {
+    const firstHour = Number(time.match(/\d{1,2}/)?.[0]);
+    if (Number.isNaN(firstHour) || firstHour < 12) return "morning";
+    if (firstHour < 18) return "afternoon";
+    return "evening";
+  }
+
+  function renderTimeline(items) {
+    const labels = { morning: "Buổi sáng", afternoon: "Buổi chiều", evening: "Buổi tối" };
+    const periods = ["morning", "afternoon", "evening"];
+    const groups = items.reduce((result, item) => {
+      const period = periodForTime(item.time);
+      (result[period] ??= []).push(item);
+      return result;
+    }, {});
+
+    return periods.filter((period) => groups[period]?.length).map((period) => `
+      <li class="timeline-period-group period-${period}">
+        <div class="timeline-period"><span>${labels[period]}</span></div>
+        <ol class="timeline-period-items">
+          ${groups[period].map((item) => `
+        <li class="timeline-item period-item-${period}">
+          <div class="timeline-time-badge">${item.time}</div>
+          <div class="timeline-text">
+            <div class="timeline-item-header">
+              <strong class="item-activity-name">${item.title}</strong>
+              ${item.tag ? `<span class="timeline-pill-tag tone-${tagTone(item.tag)}">${item.tag}</span>` : ""}
+            </div>
+            <div class="timeline-location-row">
+              <span class="pin-icon">📍</span>
+              <span class="loc-text">${item.location}</span>
+            </div>
+            <div class="timeline-short-note">${item.note}</div>
+          </div>
+        </li>`).join("")}
+        </ol>
+      </li>`).join("");
+  }
+
   function renderDay(index) {
     currentDayIndex = index;
     const data = scheduleData[index];
@@ -410,28 +536,11 @@ document.addEventListener("DOMContentLoaded", () => {
     dayCard.innerHTML = `
       <div>
         <div class="card-top-meta">
-          <span>LỊCH TRÌNH THEO GIỜ</span>
+          <span class="day-slogan-pill">✨ ${data.slogan}</span>
           <span>${data.meta}</span>
         </div>
         <h3 class="day-card-title">${data.title}</h3>
-        <ol class="timeline-list">
-          ${data.items.map(item => `
-            <li class="timeline-item">
-              <div class="timeline-time-badge">${item.time}</div>
-              <div class="timeline-text">
-                <div class="timeline-item-header">
-                  <strong class="item-activity-name">${item.title}</strong>
-                  ${item.tag ? `<span class="timeline-pill-tag">${item.tag}</span>` : ''}
-                </div>
-                <div class="timeline-location-row">
-                  <span class="pin-icon">📍</span>
-                  <span class="loc-text">${item.location}</span>
-                </div>
-                <div class="timeline-short-note">${item.note}</div>
-              </div>
-            </li>
-          `).join("")}
-        </ol>
+        <ol class="timeline-list">${renderTimeline(data.items)}</ol>
       </div>
       <div class="card-footer-tip">${data.tip}</div>
     `;
@@ -500,7 +609,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       text += `${data.tip}`;
       navigator.clipboard.writeText(text).then(() => {
-        showToast("Đã sao chép lịch trình & địa điểm ngày " + data.meta + "!");
+        showToast("Đã sao chép lịch trình: " + data.slogan + "!");
       });
     });
   }
@@ -561,6 +670,15 @@ DTEND:20260918T140000Z
 SUMMARY:🐂 Lẩu Bò Quán Gỗ Ba Toa & Kem bơ Nari
 DESCRIPTION:Thưởng thức lẩu bò nạm gân đuôi bò và kem bơ sáp.
 LOCATION:Hẻm 1/29 Hoàng Diệu, P.5, Đà Lạt
+END:VEVENT
+BEGIN:VEVENT
+UID:dalat-tour-sunday-20260920
+DTSTAMP:20260920T010000Z
+DTSTART:20260920T010000Z
+DTEND:20260920T100000Z
+SUMMARY:🏢 Tham quan & Trải nghiệm cùng đoàn Công ty
+DESCRIPTION:Khám phá Ga Đà Lạt, Vườn hoa, Dinh Bảo Đại và mua đặc sản làm quà.
+LOCATION:Đà Lạt, Lâm Đồng
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-flight-return-20260921

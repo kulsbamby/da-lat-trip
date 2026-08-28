@@ -71,7 +71,7 @@
     </header>
 
     <!-- =======================================================================
-         VIEW 1: LỊCH TRÌNH & HÌNH ẢNH (GỌN GÀNG, RELAX & ẨM THỰC CHUẨN ĐÀ LẠT)
+         VIEW 1: LỊCH TRÌNH & HÌNH ẢNH (5 NGÀY TÁCH BẠCH RÕ RÀNG)
          ======================================================================= -->
     <div id="view-itinerary" class="main-view active">
       <!-- Compact Top Header -->
@@ -107,7 +107,7 @@
           <span class="p-chip">🐟 Lẩu cá tầm Ngư Sơn</span>
           <span class="p-chip">💼 3 Block WFH tập trung</span>
           <span class="p-chip">🌄 Cầu Đất sớm (05:30)</span>
-          <span class="p-chip">🍢 Ăn vặt & Sữa đậu nành</span>
+          <span class="p-chip">🏢 Company Trip 19–20/09</span>
           <span class="p-chip">✈️ Bay về 07:20 (21/09)</span>
         </div>
       </section>
@@ -116,8 +116,8 @@
       <section class="section schedule-section compact-section" id="lich-trinh-section">
         <div class="schedule-top compact-top">
           <div class="schedule-header-text">
-            <h2 class="section-title-compact">Chi tiết lịch trình theo ngày</h2>
-            <span class="hint-text">Chọn ngày để xem dòng thời gian, quán ăn cụ thể và ảnh chụp thực tế tại Đà Lạt</span>
+            <h2 class="section-title-compact">Chi tiết lịch trình theo ngày (17 ➔ 21/09)</h2>
+            <span class="hint-text">Chọn từng ngày để xem dòng thời gian, địa điểm cụ thể và hình ảnh thực tế</span>
           </div>
           <button class="btn-copy-day" id="btn-copy-current-day" title="Sao chép lịch trình ngày này">
             <svg viewBox="0 0 20 20" width="15" height="15" fill="currentColor">
@@ -128,34 +128,41 @@
           </button>
         </div>
 
-        <!-- Day Selector Tabs -->
-        <div class="day-tabs-horizontal" role="tablist" aria-label="Chọn ngày trong lịch trình">
+        <!-- 5 Distinct Day Selector Tabs -->
+        <div class="day-tabs-horizontal day-tabs-5" role="tablist" aria-label="Chọn ngày trong lịch trình">
           <button class="tab-item-h active" data-day="0" role="tab" aria-selected="true">
             <span class="tab-h-date">17.09</span>
             <span class="tab-h-day">Thứ Năm</span>
-            <span class="tab-h-desc">Lẩu cá tầm & Bánh tráng nướng</span>
-            <span class="tab-h-tag">WFH 1</span>
+            <span class="tab-h-desc">Chạm ngõ phố sương</span>
+            <span class="tab-h-tag">KHỞI ĐỘNG</span>
           </button>
 
           <button class="tab-item-h" data-day="1" role="tab" aria-selected="false">
             <span class="tab-h-date">18.09</span>
             <span class="tab-h-day">Thứ Sáu</span>
-            <span class="tab-h-desc">Cầu Đất sớm & Lẩu bò Ba Toa</span>
+            <span class="tab-h-desc">Sớm mai Cầu Đất</span>
             <span class="tab-h-tag highlight">ĐIỂM NHẤN</span>
           </button>
 
           <button class="tab-item-h" data-day="2" role="tab" aria-selected="false">
             <span class="tab-h-date">19.09</span>
             <span class="tab-h-day">Thứ Bảy</span>
-            <span class="tab-h-desc">Trả VF3 & Nhập đoàn</span>
-            <span class="tab-h-tag">COMPANY TRIP</span>
+            <span class="tab-h-desc">Hòa nhịp đồng đội</span>
+            <span class="tab-h-tag">GALA TRIP</span>
           </button>
 
           <button class="tab-item-h" data-day="3" role="tab" aria-selected="false">
-            <span class="tab-h-date">20–21</span>
-            <span class="tab-h-day">CN & T2</span>
-            <span class="tab-h-desc">Lịch đoàn & Bay về 07:20</span>
-            <span class="tab-h-tag">BAY SỚM</span>
+            <span class="tab-h-date">20.09</span>
+            <span class="tab-h-day">Chủ Nhật</span>
+            <span class="tab-h-desc">Khám phá cùng đoàn</span>
+            <span class="tab-h-tag">TOUR ĐOÀN</span>
+          </button>
+
+          <button class="tab-item-h" data-day="4" role="tab" aria-selected="false">
+            <span class="tab-h-date">21.09</span>
+            <span class="tab-h-day">Thứ Hai</span>
+            <span class="tab-h-desc">Cất cánh rạng đông</span>
+            <span class="tab-h-tag highlight">BAY 07:20</span>
           </button>
         </div>
 
