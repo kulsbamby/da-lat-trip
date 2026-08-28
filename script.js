@@ -141,13 +141,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (btnCopyFlightGuide) {
     btnCopyFlightGuide.addEventListener("click", async () => {
-      const guideUrl = new URL("#so-tay-bay", window.location.href).href;
+      const summaryText = `✈️ CẨM NANG BAY CHO NGƯỜI ĐI LẦN ĐẦU (Đà Lạt DLI ➔ Tân Sơn Nhất SGN)
+⏰ Chuyến bay 07:20 Thứ Hai 21/09 — Có mặt sân bay lúc 06:00 (trước 80 phút).
+
+📌 5 BƯỚC LÀM THỦ TỤC:
+1. Check-in & In vé: Xuất trình CCCD bản gốc, in Boarding Pass & gửi vali ký gửi.
+2. Soát an ninh: Cởi áo khoác, thắt lưng, bỏ Laptop/iPad ra khay riêng qua máy quét.
+3. Vào phòng chờ (Gate): Ngồi đúng cửa khởi hành trên vé, nghe loa thông báo.
+4. Lên máy bay: Quét vé, tìm đúng số ghế, cất vali xách tay lên hộc trần.
+5. Hạ cánh Tân Sơn Nhất: Ra băng chuyền Baggage Claim lấy vali ký gửi.
+
+🚨 LƯU Ý PIN & HÀNH LÝ:
+• 🔋 Pin sạc dự phòng & Laptop: BẮT BUỘC để trong balo XÁCH TAY mang theo người (TUYỆT ĐỐI CẤM ký gửi).
+• 🧳 Hành lý ký gửi: Để quần áo, rượu vang, mứt dâu hũ bọc xốp, dao kéo bấm móng.
+• 📱 Điện thoại: Bật Chế độ máy bay khi máy bay lăn bánh cất cánh.`;
+
       try {
         if (!navigator.clipboard) throw new Error("Clipboard API unavailable");
-        await navigator.clipboard.writeText(guideUrl);
+        await navigator.clipboard.writeText(summaryText);
       } catch {
         const input = document.createElement("textarea");
-        input.value = guideUrl;
+        input.value = summaryText;
         input.setAttribute("readonly", "");
         input.style.position = "fixed";
         input.style.opacity = "0";
@@ -156,8 +170,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.execCommand("copy");
         input.remove();
       }
-      btnCopyFlightGuide.textContent = "Đã sao chép link";
-      setTimeout(() => { btnCopyFlightGuide.textContent = "Sao chép link cẩm nang"; }, 1800);
+      showToast("Đã sao chép cẩm nang bay vào clipboard!");
+      btnCopyFlightGuide.textContent = "✓ Đã sao chép tóm tắt";
+      setTimeout(() => { btnCopyFlightGuide.textContent = "📋 Sao chép tóm tắt gửi nhóm"; }, 2000);
     });
   }
 
