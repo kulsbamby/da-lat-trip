@@ -371,9 +371,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           time: "21:15 – 22:30",
-          title: "Kem bơ Nari & Chè Hé nóng",
-          location: "Kem bơ Nari (74C Nguyễn Văn Trỗi) & Chè Hé (11A Ba Tháng Hai)",
-          note: "Kem bơ sáp béo ngậy sầu riêng, chén chè trôi nước gừng ấm nóng.",
+          title: "Bánh tráng nướng, Kem bơ Nari & Chè Hé nóng",
+          location: "Bánh tráng nướng Dì Đinh (26 Hoàng Diệu) → Kem bơ Nari (74C Nguyễn Văn Trỗi) & Chè Hé (11A Ba Tháng Hai)",
+          note: "Ghé thêm bánh tráng nướng giòn rụm trên đường, rồi tới kem bơ sáp béo ngậy và chè trôi nước gừng ấm nóng.",
           tag: "Ăn vặt"
         }
       ],
@@ -514,6 +514,13 @@ document.addEventListener("DOMContentLoaded", () => {
           location: "Nhà hàng ẩm thực Đà Lạt",
           note: "Bữa cơm tổng kết, nâng ly khép lại chuỗi ngày gắn kết.",
           tag: "Bữa tối"
+        },
+        {
+          time: "20:30 – 20:55",
+          title: "Bánh tráng nướng & Sữa đậu nành chia tay phố đêm",
+          location: "Bánh tráng nướng Cô Hoa (56 Thông Thiên Học) & Hoa Sữa (64 Tăng Bạt Hổ)",
+          note: "Tranh thủ ăn vặt lần cuối trước khi về soát vali cho chuyến bay sớm.",
+          tag: "Ăn vặt"
         },
         {
           time: "21:00 – 21:30",
@@ -724,7 +731,7 @@ BEGIN:VEVENT
 UID:dalat-vf3-early-pickup-20260917
 DTSTAMP:20260916T233000Z
 DTSTART:20260916T233000Z
-DTEND:20260917T003000Z
+DTEND:20260917T000000Z
 SUMMARY:⚡ Nhận xe VinFast VF 3 sớm (06:30 sáng)
 DESCRIPTION:Đến Đà Lạt 06:00, nhận xe VF 3 lúc 06:30 để bỏ đồ lên xe và đi ăn sáng. Amazing Xanh hotline: 1900 8649.
 LOCATION:Trung tâm TP. Đà Lạt (giao tận nơi)
@@ -740,8 +747,8 @@ LOCATION:Đà Lạt
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-dinner-sturgeon-20260917
-DTSTAMP:20260917T114500Z
-DTSTART:20260917T114500Z
+DTSTAMP:20260917T113000Z
+DTSTART:20260917T113000Z
 DTEND:20260917T133000Z
 SUMMARY:🍲 Ăn tối Lẩu Cá Tầm Ngư Sơn
 DESCRIPTION:Cá tầm tươi giòn sần sật nhúng lẩu măng chua cay.
@@ -749,9 +756,9 @@ LOCATION:34 Trần Nhật Duật, P. Cam Ly, Đà Lạt
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-caudat-20260918
-DTSTAMP:20260918T223000Z
-DTSTART:20260918T223000Z
-DTEND:20260919T020000Z
+DTSTAMP:20260917T223000Z
+DTSTART:20260917T223000Z
+DTEND:20260918T020000Z
 SUMMARY:🌄 Đồi Chè Cầu Đất & Cafe bên hồ
 DESCRIPTION:Rời trung tâm 05:30 -> Đồi chè 06:20 -> Cafe hồ 07:30.
 LOCATION:Đồi chè Cầu Đất Farm, Xuân Trường, Đà Lạt
