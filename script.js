@@ -210,41 +210,41 @@ document.addEventListener("DOMContentLoaded", () => {
       slogan: "Chạm Ngõ Sương Sớm",
       title: "Chạm Ngõ Sương Sớm",
       tone: "mist",
-      tip: "💡 Đến lúc 06:00 sáng, nhận xe VF 3 sớm lúc 06:30 để chủ động bỏ đồ lên xe, đi ăn sáng ngắm sương hồ và chốt khách sạn.",
+      tip: "💡 Đến Bến xe Đa Thiện lúc 06:30 sáng, nhận xe VF 3 ngay tại đây để chủ động bỏ đồ lên xe, đi ăn sáng ngắm sương hồ và chốt khách sạn. Giờ WFH thường 8h30–17h30, cao điểm 9h nhiều meeting nên đã xếp sẵn ở quán có Wi-Fi đúng khung này.",
       items: [
         {
-          time: "06:00 – 06:30",
+          time: "06:30 – 06:45",
           title: "Đến Đà Lạt đón bình minh sương sớm",
-          location: "Trung tâm TP. Đà Lạt (14–15°C trong lành)",
-          note: "Đến sớm tinh khôi, hít thở không khí mát lạnh đầu ngày, rửa mặt tỉnh táo.",
+          location: "Bến xe Đa Thiện, Đà Lạt (14–15°C trong lành)",
+          note: "Xuống bến, hít thở không khí mát lạnh đầu ngày, rửa mặt tỉnh táo.",
           tag: "Đến nơi"
         },
         {
-          time: "06:30 – 07:00",
-          title: "Nhận xe VinFast VF 3 sớm",
-          location: "Giao tận nơi / Amazing Xanh (14 Đống Đa, P.3 - 📞 1900 8649)",
-          note: "Nhận xe sớm, kiểm tra pin >80%, cất hành lý lên cốp xe.",
+          time: "06:45 – 07:00",
+          title: "Nhận xe VinFast VF 3 ngay tại bến xe",
+          location: "Bến xe Đa Thiện (giao xe tại chỗ) / Amazing Xanh (📞 1900 8649)",
+          note: "Nhận xe ngay tại bến, kiểm tra pin >80%, cất hành lý lên cốp xe.",
           tag: "Xe VF 3"
         },
         {
           time: "07:00 – 08:30",
-          title: "Ăn sáng nóng hổi & Cà phê Tùng ngắm hồ",
-          location: "Bánh mì xíu mại Ri 79 (01 Thông Thiên Học) & Cà phê Tùng (Số 6 Khu Hòa Bình)",
-          note: "Chén xíu mại cay béo nóng hổi, ly cafe phin vợt ngắm sương mai.",
+          title: "Ăn sáng nóng hổi & Cà phê ven Phía Tây Mặt Trời",
+          location: "Bánh mì xíu mại Ri 79 (01 Thông Thiên Học) & Phía Tây Mặt Trời (12/6 Lê Văn Tám, đối diện KS Diệu Thông)",
+          note: "Chén xíu mại cay béo nóng hổi, rồi tách cà phê specialty trong không gian tối giản, tách khỏi khu phố cổ đông khách.",
           tag: "Ăn sáng"
         },
         {
           time: "08:30 – 11:30",
           title: "Chốt đặt khách sạn & Cafe WFH sáng",
-          location: "Khách sạn tự túc (Free Style / BIDV Central) & Daily Log (15 Thông Thiên Học)",
-          note: "Chốt khách sạn 2 đêm, gửi hành lý hoặc nhận phòng sớm; WFH êm tại Daily Log (Wi-Fi 5GHz).",
+          location: "Daily Log Coffee (15 Thông Thiên Học) & khách sạn tự túc khu Nguyễn Công Trứ (Victorian / Bách An Lạc)",
+          note: "Ngồi sẵn tại Daily Log (Wi-Fi 5GHz) để online đúng khung 8h30 và sẵn sàng nếu có meeting lúc 9h, tranh thủ chốt luôn khách sạn 2 đêm, gửi hành lý hoặc nhận phòng sớm.",
           tag: "Chốt KS & WFH"
         },
         {
           time: "11:30 – 13:00",
-          title: "Ăn trưa Bánh ướt lòng gà Long",
-          location: "Hẻm 202 Phan Đình Phùng (hoặc Bánh căn Lệ - 27/44 Yersin)",
-          note: "Gà ta xé giòn, lòng mề đậm đà, nước mắm chua ngọt ấm bụng.",
+          title: "Ăn trưa Bánh ướt lòng gà Hằng",
+          location: "68 Phan Đình Phùng, P.2 (mặt đường lớn, dễ đậu VF 3)",
+          note: "Gà ta xé giòn, lòng mề đậm đà, nước mắm chua ngọt ấm bụng — quán ngay mặt đường nên đậu xe thoải mái.",
           tag: "Ăn trưa"
         },
         {
@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           time: "14:00 – 17:30",
           title: "WFH Block 1: Xử lý công việc",
-          location: "Phòng khách sạn / Daily Log Coffee",
+          location: "Daily Log Coffee (15 Thông Thiên Học) / quán cà phê gần khách sạn",
           note: "Duyệt approval, check Slack, email tồn đọng vừa sức.",
           tag: "WFH"
         },
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
       slogan: "Sớm Mai Cầu Đất",
       title: "Sớm Mai Cầu Đất",
       tone: "pine",
-      tip: "🌿 05:30 xuất phát đón trọn không khí 14°C trong veo, chiều Deep Work xong là thoải mái xả hơi cuối tuần.",
+      tip: "🌿 05:30 xuất phát đón trọn không khí 14°C trong veo. Vẫn WFH sáng 10:30–12:00 như thường lệ, chỉ từ tối 18/09 mới bắt đầu chậm lại — chiều dồn cho thiên nhiên: Suối Tía hướng Nam rồi vòng Tây Bắc lên hồ Suối Vàng & Cây thông cô đơn. Mang giày đi bộ, nước uống và sạc đầy pin VF 3 vì là ngày chạy xe nhiều nhất chuyến đi.",
       items: [
         {
           time: "05:30 – 06:15",
@@ -335,38 +335,80 @@ document.addEventListener("DOMContentLoaded", () => {
           tag: "Về phố"
         },
         {
-          time: "10:45 – 13:00",
-          title: "WFH Block 2 (Phần 1): Deep Work",
-          location: "Phòng khách sạn / Daily Log Coffee (15 Thông Thiên Học - Wi-Fi 5GHz)",
-          note: "Phiên làm việc chính: họp trọng tâm, code, chốt tài liệu.",
-          tag: "Deep Work"
+          time: "10:30 – 12:00",
+          title: "WFH Block 2: Xử lý công việc",
+          location: "Daily Log Coffee (15 Thông Thiên Học) / khách sạn tự túc khu Nguyễn Công Trứ",
+          note: "Ngày làm việc bình thường — chỉ 18/09 tối và 19/09 sau khi nhập đoàn mới thật sự nghỉ.",
+          tag: "WFH"
         },
         {
-          time: "13:00 – 14:00",
+          time: "12:00 – 12:45",
           title: "Ăn trưa Bánh mì xíu mại Ri 79",
           location: "01 Thông Thiên Học (hoặc Phở Thưng - 02 Nguyễn Văn Cừ)",
-          note: "Bánh mì xíu mại nóng giòn cay béo, nghỉ trưa 20 phút.",
+          note: "Bánh mì xíu mại nóng giòn cay béo, nghỉ trưa nhanh trước khi lên đường tiếp.",
           tag: "Ăn trưa"
         },
         {
-          time: "14:00 – 16:30",
-          title: "WFH Block 2 (Phần 2): Chốt Backlog",
-          location: "Daily Log Coffee / Khách sạn",
-          note: "Dọn dẹp ticket tồn đọng, bàn giao công việc tuần.",
-          tag: "Dọn việc"
+          time: "13:00 – 13:30",
+          title: "Lái xe đến Suối Tía",
+          location: "Đèo Prenn ➔ Triệu An ➔ Suối Tía, Tà Nung (~12km, 2km cuối đường đất)",
+          note: "Đường nhỏ nhiều khúc cua, đi chậm và cẩn thận đoạn đất cuối nếu vừa mưa.",
+          tag: "Di chuyển"
         },
         {
-          time: "17:00 – 18:30",
-          title: "Ngắm hoàng hôn đồi thông",
-          location: "In The Forest (Khe Sanh) / Cheo Veooo (116 Hùng Vương) / Dinh III",
-          note: "Trà ấm, ngắm mặt trời lặn sau rặng thông yên tĩnh.",
-          tag: "Chill chiều"
+          time: "13:30 – 14:20",
+          title: "Khám phá Suối Tía",
+          location: "Suối Tía, Tà Nung, Đà Lạt",
+          note: "Dạo bộ ven dòng suối màu tía hoang sơ, chụp ảnh, không gian yên tĩnh ít khách du lịch.",
+          tag: "Thiên nhiên"
+        },
+        {
+          time: "14:20 – 14:50",
+          title: "Lái xe về trung tâm",
+          location: "Triệu An ➔ Đèo Prenn ➔ Trung tâm TP",
+          note: "Chạy xe thong thả, nghỉ ngơi ngắn trước chặng tiếp theo.",
+          tag: "Về phố"
+        },
+        {
+          time: "15:00 – 15:45",
+          title: "Lái xe ra hồ Đankia - Suối Vàng",
+          location: "Xô Viết Nghệ Tĩnh ➔ Ankroet ➔ DT722 (~20km)",
+          note: "Cung đường dài nhất trong ngày nhưng cảnh dọc hồ rất đẹp — kiểm tra pin VF 3 trên 50%.",
+          tag: "Di chuyển"
+        },
+        {
+          time: "15:45 – 16:05",
+          title: "Ghé Thác Ankroet & hồ Đankia",
+          location: "Đập thủy điện Ankroet, cạnh hồ Suối Vàng",
+          note: "Thác nhỏ 15m cạnh nhà máy thủy điện đầu tiên của Đà Lạt, ngắm mặt hồ tĩnh lặng.",
+          tag: "Thiên nhiên"
+        },
+        {
+          time: "16:05 – 16:45",
+          title: "Cây thông cô đơn bên hồ Suối Vàng",
+          location: "Đồi Cây thông cô đơn, hồ Suối Vàng",
+          note: "Thuê canô/thuyền qua hồ cho nhanh để kịp giờ, hoặc đi bộ khoảng 3km nếu còn thời gian.",
+          tag: "Thiên nhiên"
+        },
+        {
+          time: "16:45 – 17:30",
+          title: "Lái xe về trung tâm",
+          location: "DT722 ➔ Ankroet ➔ Xô Viết Nghệ Tĩnh",
+          note: "Về khách sạn nghỉ ngơi, tắm rửa sau một ngày chạy xe dài.",
+          tag: "Về phố"
+        },
+        {
+          time: "17:30 – 19:00",
+          title: "Nghỉ ngơi trước giờ ăn tối",
+          location: "Khách sạn tự túc khu Nguyễn Công Trứ",
+          note: "Tắm rửa, thay đồ, hồi sức sau ngày chạy xe dài nhất chuyến đi.",
+          tag: "Nghỉ ngơi"
         },
         {
           time: "19:00 – 21:00",
-          title: "Ăn tối Lẩu bò Ba Toa Quán Gỗ",
-          location: "Hẻm 1/29 Hoàng Diệu, P.5",
-          note: "Nồi lẩu bò nạm gân đuôi bò thơm ngậy ăn kèm mì trứng, rau xanh.",
+          title: "Ăn tối Lẩu Bò Phan Rang",
+          location: "29 Quang Trung, P.9 (mặt đường lớn, chỗ đậu ô tô thoải mái)",
+          note: "Nước lẩu thanh ngọt kiểu Phan Rang, thịt bò và nạm gân mềm, sân trong ngoài rộng rãi.",
           tag: "Ăn tối"
         },
         {
@@ -417,8 +459,8 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           time: "08:30 – 10:00",
           title: "WFH Block 3: Chốt việc & Đóng vali",
-          location: "Khách sạn tự túc (hoặc Là Việt Coffee - 200 Nguyễn Công Trứ)",
-          note: "Xử lý việc khẩn cấp, đóng gói hành lý.",
+          location: "Cheo Veooo (116 Hùng Vương) hoặc quán cà phê ven đồi gần khách sạn tự túc",
+          note: "Xử lý việc khẩn cấp, ưu tiên meeting nếu rơi đúng khung 9h, rồi đóng gói hành lý.",
           tag: "Dọn đồ"
         },
         {
@@ -732,9 +774,9 @@ UID:dalat-vf3-early-pickup-20260917
 DTSTAMP:20260916T233000Z
 DTSTART:20260916T233000Z
 DTEND:20260917T000000Z
-SUMMARY:⚡ Nhận xe VinFast VF 3 sớm (06:30 sáng)
-DESCRIPTION:Đến Đà Lạt 06:00, nhận xe VF 3 lúc 06:30 để bỏ đồ lên xe và đi ăn sáng. Amazing Xanh hotline: 1900 8649.
-LOCATION:Trung tâm TP. Đà Lạt (giao tận nơi)
+SUMMARY:⚡ Đến Bến xe Đa Thiện & nhận xe VinFast VF 3 (06:30 sáng)
+DESCRIPTION:Đến Đà Lạt 06:30 tại Bến xe Đa Thiện, nhận xe VF 3 ngay tại đây để bỏ đồ lên xe và đi ăn sáng. Amazing Xanh hotline: 1900 8649.
+LOCATION:Bến xe Đa Thiện, Đà Lạt
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-wfh-1-20260917
@@ -742,8 +784,8 @@ DTSTAMP:20260917T070000Z
 DTSTART:20260917T070000Z
 DTEND:20260917T103000Z
 SUMMARY:💼 WFH Block 1 - Đà Lạt
-DESCRIPTION:Xử lý tin nhắn, approval sau khi check-in khách sạn.
-LOCATION:Đà Lạt
+DESCRIPTION:Làm việc tại quán cà phê gần khách sạn (Daily Log Coffee), xử lý tin nhắn, approval.
+LOCATION:Daily Log Coffee (15 Thông Thiên Học, Đà Lạt)
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-dinner-sturgeon-20260917
@@ -765,21 +807,30 @@ LOCATION:Đồi chè Cầu Đất Farm, Xuân Trường, Đà Lạt
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-wfh-2-20260918
-DTSTAMP:20260918T034500Z
-DTSTART:20260918T034500Z
-DTEND:20260918T093000Z
-SUMMARY:💼 WFH Block 2 (Deep Work)
-DESCRIPTION:Tập trung làm việc và họp sau buổi sáng Cầu Đất.
+DTSTAMP:20260918T033000Z
+DTSTART:20260918T033000Z
+DTEND:20260918T050000Z
+SUMMARY:💼 WFH Block 2 - Đà Lạt
+DESCRIPTION:Làm việc tại Daily Log Coffee hoặc khách sạn tự túc khu Nguyễn Công Trứ, trước khi đi Suối Tía buổi chiều.
 LOCATION:Daily Log Coffee (15 Thông Thiên Học, Đà Lạt)
 END:VEVENT
 BEGIN:VEVENT
-UID:dalat-dinner-batoa-20260918
+UID:dalat-nature-loop-20260918
+DTSTAMP:20260918T060000Z
+DTSTART:20260918T060000Z
+DTEND:20260918T103000Z
+SUMMARY:🌲 Suối Tía & Cây thông cô đơn hồ Suối Vàng
+DESCRIPTION:Sau giờ WFH sáng: Suối Tía hướng Nam, rồi vòng Tây Bắc lên hồ Đankia - Suối Vàng, Thác Ankroet và Cây thông cô đơn.
+LOCATION:Suối Tía & Hồ Suối Vàng, Đà Lạt
+END:VEVENT
+BEGIN:VEVENT
+UID:dalat-dinner-phanrang-20260918
 DTSTAMP:20260918T120000Z
 DTSTART:20260918T120000Z
 DTEND:20260918T140000Z
-SUMMARY:🐂 Lẩu Bò Quán Gỗ Ba Toa & Kem bơ Nari
-DESCRIPTION:Thưởng thức lẩu bò nạm gân đuôi bò và kem bơ sáp.
-LOCATION:Hẻm 1/29 Hoàng Diệu, P.5, Đà Lạt
+SUMMARY:🐂 Lẩu Bò Phan Rang & Kem bơ Nari
+DESCRIPTION:Thưởng thức lẩu bò nạm gân, thịt bò mềm kiểu Phan Rang, rồi kem bơ sáp.
+LOCATION:29 Quang Trung, P.9, Đà Lạt
 END:VEVENT
 BEGIN:VEVENT
 UID:dalat-tour-sunday-20260920
@@ -826,7 +877,7 @@ END:VCALENDAR`;
     `,
     rainy: `
       <div class="plan-alert bad">
-        <strong>🌧️ Sương mù dày / mưa nhẹ:</strong> Bỏ qua phần đồi chè ngoài trời. Vào thẳng quán sảnh kính (Haiyih Coffee / Gió Cầu Đất) gọi trà gừng nóng ngắm sương mù.
+        <strong>🌧️ Sương mù dày / mưa nhẹ:</strong> Bỏ qua phần đồi chè ngoài trời. Vào thẳng quán sảnh kính (Haiyih Coffee / Gió Cầu Đất) gọi trà gừng nóng ngắm sương mù. Buổi chiều nếu mưa to, bỏ Suối Tía (đường đất trơn) và chỉ đi vòng hồ Suối Vàng - Cây thông cô đơn.
       </div>
     `
   };
@@ -861,7 +912,7 @@ END:VCALENDAR`;
   }
 
   function calculateBudget() {
-    let hotelCost = 1800000;
+    let hotelCost = 1200000;
     hotelRadios.forEach(r => { if (r.checked) hotelCost = parseInt(r.value, 10); });
 
     let vf3Cost = 1100000;
@@ -892,8 +943,8 @@ END:VCALENDAR`;
      6. SMART CHECKLIST WITH LOCALSTORAGE (IN HANDBOOK VIEW)
      ========================================================================== */
   const defaultChecklist = [
-    { id: 1, text: "Chốt đặt xe VF 3 giao sớm lúc 06:30 sáng Thứ Năm 17/09 (Amazing Xanh 1900 8649)", category: "vf3", done: false },
-    { id: 2, text: "Chọn và đặt phòng khách sạn 2 đêm 17–18/09 (Free Style 57 Hoàng Diệu hoặc BIDV Central)", category: "vf3", done: false },
+    { id: 1, text: "Chốt đặt xe VF 3 giao tại Bến xe Đa Thiện lúc 06:30 sáng Thứ Năm 17/09 (Amazing Xanh 1900 8649)", category: "vf3", done: false },
+    { id: 2, text: "Đặt phòng khách sạn 2 đêm 17–18/09 khu Nguyễn Công Trứ (Victorian 74 hoặc Bách An Lạc 70)", category: "vf3", done: false },
     { id: 3, text: "Đặt bàn trước tại Lẩu cá tầm Ngư Sơn (34 Trần Nhật Duật) cho tối 17/09", category: "trip", done: false },
     { id: 4, text: "Đóng gói thiết bị WFH: Laptop, củ sạc nhanh 65W/100W, chuột, tai nghe họp chống ồn", category: "wfh", done: false },
     { id: 5, text: "Chuẩn bị cục phát Wi-Fi 4G/5G dự phòng và ổ cắm chia đa năng", category: "wfh", done: false },
